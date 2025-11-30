@@ -184,7 +184,7 @@ const MedicalEquipment = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${
               product.image ? "overflow-hidden" : "p-6"
             }`}
           >
