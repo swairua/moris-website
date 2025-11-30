@@ -64,7 +64,7 @@ const Glassware = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
           >
             <div className="relative w-full h-48 overflow-hidden bg-muted">
               <img
