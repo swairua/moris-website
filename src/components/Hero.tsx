@@ -123,9 +123,8 @@ export const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6"
+              className="bg-white/20 border-2 border-primary-foreground text-primary-foreground hover:bg-white/30 text-lg px-8 py-6 backdrop-blur-sm"
             >
               <Phone className="mr-2 h-5 w-5" />
               Contact Us
