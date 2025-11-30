@@ -5,19 +5,20 @@ import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const productCategories = {
-  "Laboratory Analyzers & Instruments": [
-    "Ceramic Fiber Muffle Furnace",
+  "Sterilization & Safety": [
+    "Table Top Portable Type Lab Steam Autoclave Sterilizer",
+    "18L or 24L Medical Lab Autoclave Type Sterilization Machine",
     "Laminar Flow Cabinet",
     "Fume Hood",
     "Ultrasonic Cleaner",
-    "Water Distiller",
-    "Table top portable type lab steam autoclave sterilizer",
-    "18L or 24L medical lab autoclave type sterilization machine",
+  ],
+  "Diagnostic Instruments": [
     "Binocular LCD Display Digital Video Microscope",
-    "Blood analyzer Auto Hematology Analyzer",
-    "Chemistry analyzer chemistry machine",
+    "Blood Analyzer Auto Hematology Analyzer",
+    "Chemistry Analyzer Chemistry Machine",
   ],
   "Heating & Temperature Control": [
+    "Ceramic Fiber Muffle Furnace",
     "Magnetic Stirrer",
     "LCD Digital Magnetic Stirrer",
     "Heating Mantle",
@@ -33,41 +34,51 @@ const productCategories = {
     "Vortex Mixer",
     "MX-S+ Digital Vortex Mixer",
     "MX-Pro Infrared Digital Vortex Mixer",
-    "OS-T400-Plus Overhead stirrer",
-    "OS-T40-Plus/OS-T60-Plus Overhead stirrer",
+    "OS-T400-Plus Overhead Stirrer",
+    "OS-T40-Plus/OS-T60-Plus Overhead Stirrer",
     "DMS4 LCD Glass Ceramic Magnetic Stirrer with Timer",
     "DMS5 LCD Magnetic Stirrer with Timer",
     "Mixer",
   ],
-  "Sample Preparation": [
+  "Sample Preparation & Processing": [
     "Ball Mill",
     "Grinder",
     "Gel Loading Tips",
     "Homogenizer",
+    "Water Distiller",
+  ],
+  "Centrifugation Equipment": [
+    "High-speed Micro Centrifuge",
+    "DG1616R High Speed Refrigerated Centrifuge",
+    "DM0306 Low Speed Centrifuge",
   ],
   "Pipetting & Liquid Handling": [
     "Mini TopPette Pipette",
-    "HiPette-LTS Light feel manual adjustable color pipette",
+    "HiPette-LTS Light Feel Manual Adjustable Color Pipette",
     "HiPette Fully Autoclavable Manual 8-Channel Adjustable Colorful Pipette",
-    "Automated pipette system",
+    "Automated Pipette System",
   ],
-  "Centrifugation": [
-    "High-speed Micro Centrifuge",
-    "DG1616R High Speed Refrigerated Centrifuge",
-    "DM0306 Low Speed centrifuge",
-  ],
-  "Titration & Analysis": [
+  "Titration & Analysis Equipment": [
     "dTrite-Pro Electronic Titration",
+    "Vacuum Pump and Filtration",
+  ],
+  "Filtration & Purification": [
+    "Vacuum Pump (Oil-Free)",
+    "Stainless Steel Manifold Set (3 Branch)",
+    "Stainless Steel Manifold Set (6 Branch)",
+    "Water Distiller",
+  ],
+  "Analytical Lab Equipment": [
+    "Spectrophotometer",
+    "Electrochemistry Equipment",
   ],
   "Physics Lab Equipment": [
     "Physics Lab Equipment",
     "Mechanical Engineering Equipment",
-    "Educational Scientific Equipment",
   ],
   "Chemistry Lab Equipment": [
     "Chemistry Lab Equipment",
     "Lab Glassware",
-    "Analytical Lab Equipment",
   ],
   "Biology Lab Equipment": [
     "Biology Lab Equipment",
@@ -80,8 +91,16 @@ const productCategories = {
     "Educational Laboratory Equipment",
     "TVET Lab Equipment",
   ],
-  "Specialized Testing Equipment": [
-    "Vacuum Pump and filtration",
+  "Product Display Categories": [
+    "Liquid Handling",
+    "Thermal Control",
+    "Stirring & Heating",
+    "Distilling",
+    "Centrifuges",
+    "Shaker & Mixing",
+    "PCR",
+    "Electrophoresis",
+    "Spectrophotometer",
   ],
 };
 
