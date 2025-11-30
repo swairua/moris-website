@@ -2,6 +2,10 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
+  {
+    name: "Complete PPE Kit",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fddb43e85526a43be99203887e2c4499b?format=webp&width=800",
+  },
   "Laboratory Coats and Aprons",
   "Safety Goggles and Face Shields",
   "Gloves (Nitrile, Latex, and Chemical Resistant)",
