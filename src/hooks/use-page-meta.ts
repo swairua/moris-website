@@ -176,5 +176,39 @@ export const usePageMeta = ({
         document.head.appendChild(articleScript);
       }
     }
-  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate]);
+
+    // Add organization schema
+    if (organizationSchema) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: organizationSchema.name,
+        ...(organizationSchema.url && { url: organizationSchema.url }),
+        ...(organizationSchema.logo && { logo: organizationSchema.logo }),
+        ...(organizationSchema.telephone && { telephone: organizationSchema.telephone }),
+        ...(organizationSchema.email && { email: organizationSchema.email }),
+        ...(organizationSchema.address && {
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: organizationSchema.address.streetAddress,
+            addressLocality: organizationSchema.address.addressLocality,
+            addressCountry: organizationSchema.address.addressCountry,
+            ...(organizationSchema.address.postalCode && { postalCode: organizationSchema.address.postalCode }),
+          }
+        }),
+        ...(organizationSchema.sameAs && { sameAs: organizationSchema.sameAs }),
+      };
+
+      let orgScript = document.querySelector('script[data-organization]');
+      if (orgScript) {
+        orgScript.textContent = JSON.stringify(schema);
+      } else {
+        orgScript = document.createElement("script");
+        orgScript.type = "application/ld+json";
+        orgScript.setAttribute("data-organization", "true");
+        orgScript.textContent = JSON.stringify(schema);
+        document.head.appendChild(orgScript);
+      }
+    }
+  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, organizationSchema]);
 };
