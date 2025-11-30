@@ -60,7 +60,7 @@ export const Navigation = () => {
             className="flex items-center gap-3 animate-fade-in cursor-pointer"
           >
             <img src={logo} alt="Moris Enterprises" className="h-20 w-20" />
-            <span className="text-xl font-display font-bold text-foreground">
+            <span className="text-2xl font-display font-bold text-foreground">
               Moris Enterprises
             </span>
           </button>
