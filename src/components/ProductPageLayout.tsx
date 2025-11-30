@@ -3,15 +3,45 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 interface ProductPageLayoutProps {
   title: string;
   description: string;
   children: React.ReactNode;
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
-export const ProductPageLayout = ({ title, description, children }: ProductPageLayoutProps) => {
+export const ProductPageLayout = ({ title, description, children, faqs }: ProductPageLayoutProps) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (faqs && faqs.length > 0) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      };
+
+      let faqScript = document.querySelector('script[data-faq]');
+      if (faqScript) {
+        faqScript.textContent = JSON.stringify(faqSchema);
+      } else {
+        faqScript = document.createElement("script");
+        faqScript.type = "application/ld+json";
+        faqScript.setAttribute("data-faq", "true");
+        faqScript.textContent = JSON.stringify(faqSchema);
+        document.head.appendChild(faqScript);
+      }
+    }
+  }, [faqs]);
 
   const scrollToContact = () => {
     navigate("/");
