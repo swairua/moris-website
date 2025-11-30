@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { openProductQuotation } from "@/lib/whatsapp";
 
 const productCategories = {
   "Sterilization & Safety": [
@@ -104,13 +105,6 @@ const productCategories = {
   ],
 };
 
-const openWhatsApp = (productName: string) => {
-  const phoneNumber = "254733137332";
-  const message = encodeURIComponent(
-    `Hello! I'm interested in getting a quotation for: ${productName}. Please provide details and pricing.`
-  );
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-};
 
 const LaboratoryMaterialTesting = () => {
   usePageMeta({
@@ -151,7 +145,7 @@ const LaboratoryMaterialTesting = () => {
                     Professional laboratory and testing equipment for accurate results.
                   </p>
                   <Button
-                    onClick={() => openWhatsApp(product)}
+                    onClick={() => openProductQuotation(product)}
                     className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white font-medium text-sm"
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />

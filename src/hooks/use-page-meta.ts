@@ -5,6 +5,11 @@ interface BreadcrumbItem {
   url: string;
 }
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface PageMetaProps {
   title: string;
   description: string;
@@ -16,6 +21,8 @@ interface PageMetaProps {
   author?: string;
   publishedDate?: string;
   modifiedDate?: string;
+  faqs?: FAQItem[];
+  ogLocale?: string;
 }
 
 export const usePageMeta = ({
@@ -29,6 +36,8 @@ export const usePageMeta = ({
   author,
   publishedDate,
   modifiedDate,
+  faqs,
+  ogLocale = "en_KE",
 }: PageMetaProps) => {
   useEffect(() => {
     // Set document title
@@ -74,6 +83,7 @@ export const usePageMeta = ({
     updateOGTag("og:title", title);
     updateOGTag("og:description", description);
     updateOGTag("og:type", type);
+    updateOGTag("og:locale", ogLocale);
 
     if (image) {
       updateOGTag("og:image", image);
@@ -162,5 +172,32 @@ export const usePageMeta = ({
       }
     }
 
-  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate]);
+    // Add FAQ schema
+    if (faqs && faqs.length > 0) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      };
+
+      let faqScript = document.querySelector('script[data-faq-meta]');
+      if (faqScript) {
+        faqScript.textContent = JSON.stringify(faqSchema);
+      } else {
+        faqScript = document.createElement("script");
+        faqScript.type = "application/ld+json";
+        faqScript.setAttribute("data-faq-meta", "true");
+        faqScript.textContent = JSON.stringify(faqSchema);
+        document.head.appendChild(faqScript);
+      }
+    }
+
+  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, faqs, ogLocale]);
 };
