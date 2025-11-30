@@ -85,7 +85,13 @@ export const Navigation = () => {
             >
               Services
             </button>
-            
+            <button
+              onClick={() => navigate("/gallery")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Gallery
+            </button>
+
             {/* Products Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
