@@ -7,7 +7,6 @@ export default defineConfig({
   server: {
     host: "::",
     port: 8080,
-    middlewareMode: true,
   },
   plugins: [react()],
   resolve: {
@@ -18,17 +17,8 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    // Copy public files
-    copyPublicDir: true,
     sourcemap: false,
     minify: "terser",
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"],
-        },
-      },
-    },
   },
   publicDir: "public",
 });
