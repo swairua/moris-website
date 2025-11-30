@@ -1,8 +1,50 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
-import heroImage from "@/assets/hero-lab.jpg";
+import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const sliderImages = [
+  {
+    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F8564aa54272b435f8016c3550366fdc1?format=webp&width=1200",
+    alt: "KOMU Coils Springs - Blue",
+  },
+  {
+    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fcc3a9f9a91fc4250a63e8a11a65028bd?format=webp&width=1200",
+    alt: "KOMU Coils Springs - Yellow",
+  },
+  {
+    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F278e671287c74a3db3a9a7e0e1513949?format=webp&width=1200",
+    alt: "KOMU Coils Springs - Dark Blue",
+  },
+  {
+    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fa138c58dc0d44e1c80507118fe1a6ae8?format=webp&width=1200",
+    alt: "KOMU Coils Springs - Orange/Red",
+  },
+  {
+    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Ff89232996c3b4494b45abcf5e8d2d4b4?format=webp&width=1200",
+    alt: "KOMU Coils Springs - Standard",
+  },
+];
 
 export const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? sliderImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
+  };
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -12,14 +54,53 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Laboratory equipment"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-hero"></div>
+        {sliderImages.map((image, index) => (
+          <img
+            key={index}
+            src={image.url}
+            alt={image.alt}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        {/* Transparent Blue Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-blue-800/40 backdrop-blur-sm"></div>
+      </div>
+
+      {/* Slider Controls */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all duration-200"
+        aria-label="Previous image"
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </button>
+
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all duration-200"
+        aria-label="Next image"
+      >
+        <ChevronRight className="h-6 w-6" />
+      </button>
+
+      {/* Slider Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {sliderImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex
+                ? "bg-white w-8"
+                : "bg-white/50 w-3 hover:bg-white/75"
+            }`}
+            aria-label={`Go to image ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Content */}
@@ -30,13 +111,13 @@ export const Hero = () => {
               Trusted Since 2010
             </p>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-6 leading-tight">
             Quality Laboratory Solutions for Your Business
           </h1>
-          
+
           <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-            Leading supplier of laboratory chemicals, medical instruments, and biotechnology equipment in Kenya. 
+            Leading supplier of laboratory chemicals, medical instruments, and biotechnology equipment in Kenya.
             Quality products and services that put you first.
           </p>
 
