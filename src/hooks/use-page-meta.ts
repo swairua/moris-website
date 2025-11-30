@@ -162,45 +162,5 @@ export const usePageMeta = ({
       }
     }
 
-    // Add organization schema
-    if (organizationSchema && typeof document !== 'undefined') {
-      try {
-        const schema = {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: organizationSchema.name,
-          ...(organizationSchema.url && { url: organizationSchema.url }),
-          ...(organizationSchema.logo && { logo: organizationSchema.logo }),
-          ...(organizationSchema.telephone && { telephone: organizationSchema.telephone }),
-          ...(organizationSchema.email && { email: organizationSchema.email }),
-          ...(organizationSchema.address && {
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: organizationSchema.address.streetAddress,
-              addressLocality: organizationSchema.address.addressLocality,
-              addressCountry: organizationSchema.address.addressCountry,
-              ...(organizationSchema.address.postalCode && { postalCode: organizationSchema.address.postalCode }),
-            }
-          }),
-          ...(organizationSchema.sameAs && { sameAs: organizationSchema.sameAs }),
-        };
-
-        const head = document.head;
-        if (head) {
-          let orgScript = head.querySelector('script[data-organization]');
-          if (orgScript) {
-            orgScript.textContent = JSON.stringify(schema);
-          } else {
-            orgScript = document.createElement("script");
-            orgScript.type = "application/ld+json";
-            orgScript.setAttribute("data-organization", "true");
-            orgScript.textContent = JSON.stringify(schema);
-            head.appendChild(orgScript);
-          }
-        }
-      } catch (error) {
-        console.warn('Error setting organization schema:', error);
-      }
-    }
-  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, organizationSchema]);
+  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate]);
 };
