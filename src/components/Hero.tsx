@@ -4,24 +4,16 @@ import { useState, useEffect } from "react";
 
 const sliderImages = [
   {
-    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F8564aa54272b435f8016c3550366fdc1?format=webp&width=1200",
-    alt: "KOMU Coils Springs - Blue",
+    url: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F547aacee4084419e8e65f46072bcd136?format=webp&width=800",
+    alt: "Surgical procedure in operating room",
   },
   {
-    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fcc3a9f9a91fc4250a63e8a11a65028bd?format=webp&width=1200",
-    alt: "KOMU Coils Springs - Yellow",
+    url: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fccad64c24e20408d94dc3ec46a73c906?format=webp&width=800",
+    alt: "Dental office with modern equipment",
   },
   {
-    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F278e671287c74a3db3a9a7e0e1513949?format=webp&width=1200",
-    alt: "KOMU Coils Springs - Dark Blue",
-  },
-  {
-    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fa138c58dc0d44e1c80507118fe1a6ae8?format=webp&width=1200",
-    alt: "KOMU Coils Springs - Orange/Red",
-  },
-  {
-    url: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Ff89232996c3b4494b45abcf5e8d2d4b4?format=webp&width=1200",
-    alt: "KOMU Coils Springs - Standard",
+    url: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F1ce925034e89430b8ca69ab9bee8d2d7?format=webp&width=800",
+    alt: "Surgical team performing operation",
   },
 ];
 
