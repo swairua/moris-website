@@ -2,14 +2,33 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
-  "Beverage Testing Equipment",
-  "Packaging Testing Equipment",
-  "Quality Testing Equipment",
-  "Material Strength Testers",
-  "Texture Analyzers",
-  "Viscosity Meters",
-  "Compression Testing Machines",
-  "Tensile Testing Equipment",
+  {
+    name: "Beverage Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F54700a0afce24d8da089947a629fd4e5?format=webp&width=800",
+  },
+  {
+    name: "Packaging Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F390636224eb3470ebf882a5542bf5887?format=webp&width=800",
+  },
+  {
+    name: "Quality Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F08c9c9f6ecce4a3e8247c69ce66443f7?format=webp&width=800",
+  },
+  {
+    name: "Material Strength Testers",
+  },
+  {
+    name: "Texture Analyzers",
+  },
+  {
+    name: "Viscosity Meters",
+  },
+  {
+    name: "Compression Testing Machines",
+  },
+  {
+    name: "Tensile Testing Equipment",
+  },
 ];
 
 const LaboratoryTesting = () => {
