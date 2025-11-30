@@ -42,7 +42,7 @@ const SafetyProducts = () => {
           return (
             <Card
               key={index}
-              className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+              className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${
                 productImage ? "overflow-hidden" : "p-6"
               }`}
             >
