@@ -36,7 +36,7 @@ const LaboratoryChemicals = () => {
         <h2 className="text-3xl font-display font-bold text-foreground mb-8 text-center">
           Our Premium Chemical Grades
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F3239eaca6122445697efae1f67bac1c1%2F9780a113573e48a891da0c86f3fde2fc?format=webp&width=800"
