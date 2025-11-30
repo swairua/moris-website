@@ -47,69 +47,74 @@ export const Navigation = () => {
     { name: "Lab Equipment", path: "/products/lab-equipment", icon: Settings },
   ];
 
+  const navItems = [
+    { label: "Home", action: () => scrollToSection("home") },
+    { label: "About", action: () => scrollToSection("about") },
+    { label: "Services", action: () => scrollToSection("services") },
+    { label: "Gallery", action: () => navigate("/gallery") },
+    { label: "Automobile Supplies", action: () => navigate("/products/automobile-supplies") },
+    { label: "Contact", action: () => scrollToSection("contact") },
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/98 backdrop-blur-md shadow-lg" : "bg-white"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+          : "bg-white/90 backdrop-blur-sm shadow-sm"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-24">
+          {/* Logo Section */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center gap-3 animate-fade-in cursor-pointer"
+            className="flex items-center gap-2 animate-fade-in cursor-pointer hover:opacity-80 transition-opacity"
           >
             <img
               src={logo}
               alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
-              className="h-24 w-24"
+              className="h-16 w-16 object-contain"
               loading="eager"
               decoding="async"
             />
-            <span className="text-2xl font-display font-bold text-foreground">
-              Moris Enterprises
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg font-display font-bold text-foreground leading-tight">
+                Moris
+              </span>
+              <span className="text-lg font-display font-bold text-primary leading-tight">
+                Enterprises
+              </span>
+            </div>
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => navigate("/gallery")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Gallery
-            </button>
+          <div className="hidden lg:flex items-center gap-1">
+            {navItems.filter(item => item.label !== "Automobile Supplies").map((item) => (
+              <button
+                key={item.label}
+                onClick={item.action}
+                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all duration-200 relative group"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </button>
+            ))}
 
             {/* Products Dropdown */}
             <div
               onMouseEnter={() => setIsProductsDropdownOpen(true)}
               onMouseLeave={() => setIsProductsDropdownOpen(false)}
+              className="relative"
             >
               <DropdownMenu open={isProductsDropdownOpen} onOpenChange={setIsProductsDropdownOpen}>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
+                <DropdownMenuTrigger className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all duration-200 flex items-center gap-1.5 relative group focus:outline-none">
                   Biomedical Products
                   <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isProductsDropdownOpen ? 'rotate-180' : ''}`} />
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-screen max-w-2xl bg-background border-border z-[100] p-6">
-                  <div className="grid grid-cols-3 gap-4">
+                <DropdownMenuContent className="w-screen max-w-3xl bg-white border border-gray-100 rounded-xl shadow-lg p-8 mt-2">
+                  <div className="grid grid-cols-3 gap-6">
                     {productCategories.map((category) => {
                       const IconComponent = category.icon;
                       return (
@@ -119,12 +124,12 @@ export const Navigation = () => {
                             navigate(category.path);
                             setIsProductsDropdownOpen(false);
                           }}
-                          className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-accent transition-all duration-200 group cursor-pointer text-center"
+                          className="flex flex-col items-center gap-3 p-5 rounded-xl hover:bg-primary/5 transition-all duration-200 group cursor-pointer text-center hover:shadow-md"
                         >
-                          <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                            <IconComponent className="h-6 w-6 text-primary" />
+                          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-200">
+                            <IconComponent className="h-7 w-7 text-primary" />
                           </div>
-                          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                          <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
                             {category.name}
                           </span>
                         </button>
@@ -137,19 +142,19 @@ export const Navigation = () => {
 
             <button
               onClick={() => navigate("/products/automobile-supplies")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all duration-200 relative group"
             >
               Automobile Supplies
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Contact
-            </button>
+
+            {/* Divider */}
+            <div className="w-px h-6 bg-gray-200 mx-2" />
+
+            {/* CTA Button */}
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary-dark text-primary-foreground"
+              className="ml-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-lg px-6 py-2 h-auto"
             >
               Request Quote
             </Button>
@@ -157,7 +162,7 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="lg:hidden text-foreground hover:text-primary transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -166,40 +171,22 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => {
-                  navigate("/gallery");
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Gallery
-              </button>
+          <div className="lg:hidden border-t border-gray-100 py-6 animate-fade-in">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={item.action}
+                  className="text-foreground hover:text-primary hover:bg-primary/5 transition-all px-4 py-3 rounded-lg font-medium text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
 
               {/* Mobile Products Menu */}
-              <div className="border-t border-border pt-2">
-                <p className="text-sm font-semibold text-muted-foreground mb-3">Biomedical Products</p>
-                <div className="grid grid-cols-2 gap-2">
+              <div className="border-t border-gray-100 pt-4 mt-2">
+                <p className="text-sm font-bold text-foreground px-4 mb-3">Biomedical Products</p>
+                <div className="grid grid-cols-2 gap-2 px-2">
                   {productCategories.map((category) => {
                     const IconComponent = category.icon;
                     return (
@@ -209,10 +196,10 @@ export const Navigation = () => {
                           navigate(category.path);
                           setIsMobileMenuOpen(false);
                         }}
-                        className="flex items-center gap-2 p-3 rounded-lg hover:bg-accent transition-colors"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all"
                       >
                         <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-sm text-foreground hover:text-primary transition-colors line-clamp-2">
+                        <span className="text-sm font-medium text-foreground line-clamp-2">
                           {category.name}
                         </span>
                       </button>
@@ -221,24 +208,15 @@ export const Navigation = () => {
                 </div>
               </div>
 
-              <button
-                onClick={() => navigate("/products/automobile-supplies")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Automobile Supplies
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
-              >
-                Contact
-              </button>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary-dark text-primary-foreground w-full"
-              >
-                Request Quote
-              </Button>
+              {/* Mobile CTA */}
+              <div className="border-t border-gray-100 pt-4 mt-4 px-2">
+                <Button
+                  onClick={() => scrollToSection("contact")}
+                  className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold rounded-lg py-3 h-auto"
+                >
+                  Request Quote
+                </Button>
+              </div>
             </div>
           </div>
         )}
