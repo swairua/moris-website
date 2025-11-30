@@ -2,14 +2,35 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
-  "Prepared Media - Ready Prepared Plates",
-  "Dehydrated Culture Media",
-  "Biological Media Bases",
-  "Media Supplements",
-  "Sterile Dehydrated Culture Media",
-  "Biotechnology & Fermentation Products",
-  "Microbiological Testing Kits",
-  "Cell Culture Consumables",
+  {
+    name: "Prepared Media - Ready Prepared Plates",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fc839e507c1e8418c98acca577d0b51c4?format=webp&width=800",
+  },
+  {
+    name: "Dehydrated Culture Media",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F9b2a2b4dae7e432d93b58eea5dbcb71f?format=webp&width=800",
+  },
+  {
+    name: "Biological Media Bases",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fa199b5022322425f97f470a748c2093c?format=webp&width=800",
+  },
+  {
+    name: "Media Supplements",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F2d8d32b4bbfd48919bba9543e3f60ad3?format=webp&width=800",
+  },
+  {
+    name: "Sterile Dehydrated Culture Media",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F830aa4526716406ba629c834e4a1bd9f?format=webp&width=800",
+  },
+  {
+    name: "Biotechnology & Fermentation Products",
+  },
+  {
+    name: "Microbiological Testing Kits",
+  },
+  {
+    name: "Cell Culture Consumables",
+  },
 ];
 
 const MicrobiologyBiotechnology = () => {
