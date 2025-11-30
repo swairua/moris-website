@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -90,6 +91,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const WaterAnalysis = () => {
+  usePageMeta({
+    title: "Water Testing Equipment & Analysis Kits | Water Quality Solutions Kenya",
+    description: "Professional water testing equipment, water analysis kits, and reagents for water quality testing. Master distributor of Milwaukee, Lovibond, Hach, and Palintest products in Kenya.",
+    keywords: "water testing, water analysis, water quality equipment, testing kits, reagents, water treatment, analysis solutions, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/water-analysis",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Water Analysis", url: "/products/water-analysis" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Water Analysis Instruments and Water Treatment"

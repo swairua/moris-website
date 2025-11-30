@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -44,6 +45,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const MicrobiologyBiotechnology = () => {
+  usePageMeta({
+    title: "Microbiology & Biotechnology Products | Culture Media & Supplies Kenya",
+    description: "Premium microbiology and biotechnology products including prepared media, culture plates, dehydrated culture media, sterile plates, and biological media supplies for laboratory research.",
+    keywords: "microbiology products, biotechnology equipment, culture media, dehydrated media, prepared plates, biological media, laboratory supplies, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/microbiology-biotechnology",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Microbiology & Biotechnology", url: "/products/microbiology-biotechnology" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Microbiology and Biotechnology"

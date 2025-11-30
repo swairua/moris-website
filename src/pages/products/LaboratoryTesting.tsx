@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -71,6 +72,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const LaboratoryTesting = () => {
+  usePageMeta({
+    title: "Material & Laboratory Testing Equipment | Quality Control Solutions Kenya",
+    description: "Advanced laboratory and material testing equipment for beverage, packaging, and quality testing. Complete testing solutions for material analysis and quality control in Kenya.",
+    keywords: "laboratory testing, material testing, quality control, testing equipment, QA/QC, beverage testing, packaging testing, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/laboratory-testing",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Laboratory Testing", url: "/products/laboratory-testing" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Laboratory and Material Testing"

@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -29,6 +30,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const SafetyProducts = () => {
+  usePageMeta({
+    title: "Personal Protection Equipment (PPE) | Safety Products Kenya",
+    description: "ISO certified personal protection equipment and safety products manufactured with innovative designs and latest technology. Complete PPE solutions for laboratories and industries.",
+    keywords: "PPE, personal protective equipment, safety products, protective gear, ISO certified, laboratory safety, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/safety-products",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Safety Products", url: "/products/safety-products" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Safety Products"
