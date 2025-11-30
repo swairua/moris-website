@@ -85,7 +85,7 @@ const WasteWaterFiltration = () => {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+              className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <div className="w-full h-48 bg-muted overflow-hidden flex items-center justify-center">
                 <img 
