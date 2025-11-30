@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   "Biochemicals",
@@ -27,6 +28,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const LaboratoryChemicals = () => {
+  usePageMeta({
+    title: "Laboratory Chemicals & Reagents | High-Purity Biochemicals Kenya",
+    description: "High-purity laboratory chemicals including biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, stains, and HPLC-grade acids. Premium quality reagents for research and industrial applications.",
+    keywords: "laboratory chemicals, reagents, biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, HPLC acids, analytical grade, Kenya, supplier",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/laboratory-chemicals",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Laboratory Chemicals", url: "/products/laboratory-chemicals" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Laboratory Chemicals and Reagents"
