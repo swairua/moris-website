@@ -67,8 +67,8 @@ const products = [
 const LabEquipment = () => {
   return (
     <ProductPageLayout
-      title="Lab Equipment"
-      description="Wide range of sophisticated laboratory equipment including spectrophotometers, balances, centrifuges, and analytical instruments for comprehensive laboratory operations."
+      title="Lab Equipment & TVET Systems"
+      description="Complete range of laboratory equipment and technical vocational training (TVET) systems including hydraulic trainers, pneumatic systems, CNC machines, and precision analytical instruments."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product, index) => (
