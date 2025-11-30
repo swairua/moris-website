@@ -89,7 +89,7 @@ export const Navigation = () => {
             {/* Products Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
-                Our Products
+                Biomedical Products
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-80 bg-background border-border z-[100]">
@@ -105,6 +105,12 @@ export const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <button
+              onClick={() => navigate("/products/automobile-supplies")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Automobile Supplies
+            </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors font-medium"
@@ -153,7 +159,7 @@ export const Navigation = () => {
               
               {/* Mobile Products Menu */}
               <div className="border-t border-border pt-2">
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Our Products</p>
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Biomedical Products</p>
                 {productCategories.map((category) => (
                   <button
                     key={category.path}
@@ -168,6 +174,12 @@ export const Navigation = () => {
                 ))}
               </div>
 
+              <button
+                onClick={() => navigate("/products/automobile-supplies")}
+                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+              >
+                Automobile Supplies
+              </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="text-foreground hover:text-primary transition-colors font-medium text-left"
