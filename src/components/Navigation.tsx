@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +24,28 @@ export const Navigation = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setIsMobileMenuOpen(false);
+      }
+    }, 100);
   };
+
+  const productCategories = [
+    { name: "Medical Equipment", path: "/products/medical-equipment" },
+    { name: "Microbiology and Biotechnology", path: "/products/microbiology-biotechnology" },
+    { name: "Glassware", path: "/products/glassware" },
+    { name: "Laboratory Chemicals and Reagents", path: "/products/laboratory-chemicals" },
+    { name: "Water Analysis Instruments and Water Treatment", path: "/products/water-analysis" },
+    { name: "Laboratory and Material Testing", path: "/products/laboratory-testing" },
+    { name: "Safety Products", path: "/products/safety-products" },
+    { name: "Waste Water, Pool and Spa Filtration", path: "/products/waste-water-filtration" },
+    { name: "Palintest Kits", path: "/products/palintest-kits" },
+    { name: "Lab Equipment", path: "/products/lab-equipment" },
+  ];
 
   return (
     <nav
@@ -31,12 +55,15 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-3 animate-fade-in">
+          <button 
+            onClick={() => navigate("/")}
+            className="flex items-center gap-3 animate-fade-in cursor-pointer"
+          >
             <img src={logo} alt="Moris Enterprises" className="h-14 w-14" />
             <span className="text-xl font-display font-bold text-foreground">
               Moris Enterprises
             </span>
-          </div>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
@@ -58,6 +85,26 @@ export const Navigation = () => {
             >
               Services
             </button>
+            
+            {/* Products Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
+                Our Products
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-80 bg-background border-border z-[100]">
+                {productCategories.map((category) => (
+                  <DropdownMenuItem
+                    key={category.path}
+                    onClick={() => navigate(category.path)}
+                    className="cursor-pointer text-foreground hover:text-primary hover:bg-accent"
+                  >
+                    {category.name}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors font-medium"
@@ -103,6 +150,24 @@ export const Navigation = () => {
               >
                 Services
               </button>
+              
+              {/* Mobile Products Menu */}
+              <div className="border-t border-border pt-2">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Our Products</p>
+                {productCategories.map((category) => (
+                  <button
+                    key={category.path}
+                    onClick={() => {
+                      navigate(category.path);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block w-full text-left text-foreground hover:text-primary transition-colors py-2 pl-4"
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+
               <button
                 onClick={() => scrollToSection("contact")}
                 className="text-foreground hover:text-primary transition-colors font-medium text-left"
