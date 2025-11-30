@@ -53,6 +53,8 @@ export const Hero = () => {
             key={index}
             src={image.url}
             alt={image.alt}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
@@ -99,16 +101,16 @@ export const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <div className="max-w-3xl animate-slide-up">
           <div className="inline-block bg-primary/20 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-6">
-            <p className="text-primary-foreground text-sm font-medium">
+            <span className="text-primary-foreground text-sm font-medium">
               Trusted Since 2010
-            </p>
+            </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-6 leading-tight">
             Quality Laboratory Solutions for Your Business
           </h1>
 
-          <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">
+          <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed" role="doc-subtitle">
             Leading supplier of laboratory chemicals, medical instruments, and biotechnology equipment in Kenya.
             Quality products and services that put you first.
           </p>
