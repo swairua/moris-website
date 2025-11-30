@@ -74,14 +74,27 @@ const LabEquipment = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+              product.image ? "overflow-hidden" : "p-6"
+            }`}
           >
-            <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-              {product}
-            </h3>
-            <p className="text-muted-foreground">
-              Professional-grade laboratory equipment for precise scientific analysis.
-            </p>
+            {product.image && (
+              <div className="relative w-full h-48 overflow-hidden bg-muted">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div className={product.image ? "p-6" : ""}>
+              <h3 className="text-xl font-display font-semibold text-foreground mb-2">
+                {product.name}
+              </h3>
+              <p className="text-muted-foreground">
+                Professional-grade laboratory equipment for precise scientific analysis.
+              </p>
+            </div>
           </Card>
         ))}
       </div>
