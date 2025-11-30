@@ -14,42 +14,52 @@ const products = [
   {
     name: "Laboratory Coats and Aprons",
     description: "Professional-grade laboratory coats and aprons for safe chemical and biological handling.",
+    image: "https://images.pexels.com/photos/4033152/pexels-photo-4033152.jpeg",
   },
   {
     name: "Safety Goggles and Face Shields",
     description: "Impact-resistant eye protection devices for chemical splash and particle protection.",
+    image: "https://images.pexels.com/photos/9241704/pexels-photo-9241704.jpeg",
   },
   {
     name: "Gloves (Nitrile, Latex, and Chemical Resistant)",
     description: "Multiple glove materials for different handling requirements and chemical compatibility.",
+    image: "https://images.pexels.com/photos/7337928/pexels-photo-7337928.jpeg",
   },
   {
     name: "Respirators and Face Masks",
     description: "Respiratory protection devices for hazardous fume and particulate protection.",
+    image: "https://images.pexels.com/photos/4197564/pexels-photo-4197564.jpeg",
   },
   {
     name: "Safety Shoes and Boots",
     description: "Protective footwear with slip-resistant soles and chemical-resistant materials.",
+    image: "https://images.pexels.com/photos/23319169/pexels-photo-23319169.jpeg",
   },
   {
     name: "Ear Protection",
     description: "Noise-reducing earplugs and earmuffs for loud laboratory environments.",
+    image: "https://images.pexels.com/photos/8488000/pexels-photo-8488000.jpeg",
   },
   {
     name: "Head Protection - Hard Hats",
     description: "Durable hard hats for protection against falling objects and impact hazards.",
+    image: "https://images.pexels.com/photos/19351986/pexels-photo-19351986.jpeg",
   },
   {
     name: "First Aid Kits",
     description: "Complete first aid kits stocked with essential medical supplies and emergency treatments.",
+    image: "https://images.pexels.com/photos/6520137/pexels-photo-6520137.jpeg",
   },
   {
     name: "Safety Signage",
     description: "Hazard warning signs and safety labels for proper laboratory hazard communication.",
+    image: "https://images.pexels.com/photos/12196671/pexels-photo-12196671.jpeg",
   },
   {
     name: "Spill Control Products",
     description: "Absorbent materials and containment products for chemical spill cleanup.",
+    image: "https://images.pexels.com/photos/12585524/pexels-photo-12585524.jpeg",
   },
 ];
 
