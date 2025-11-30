@@ -161,5 +161,6 @@ export const usePageMeta = ({
         document.head.appendChild(articleScript);
       }
     }
+
   }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate]);
 };

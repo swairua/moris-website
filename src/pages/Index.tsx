@@ -8,11 +8,14 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Index = () => {
   usePageMeta({
-    title: "Moris Enterprises | Laboratory Chemicals & Medical Equipment Supplier Kenya",
-    description: "Leading supplier of laboratory chemicals, medical instruments, biotechnology equipment & diagnostic tools in Kenya since 2010. Get free quotations via WhatsApp. Quality products & professional services.",
-    keywords: "laboratory chemicals, medical equipment, biotechnology, laboratory reagents, diagnostic tools, Kenya, supplier, laboratory instruments, quality chemicals, medical supplies",
+    title: "Moris Enterprises | Laboratory Chemicals, Equipment & Medical Supplies Kenya",
+    description: "Premier supplier of laboratory chemicals, medical equipment, biotechnology supplies & diagnostic instruments in Kenya. Microbiology media, chromatography consumables, water testing equipment, quality control instruments. Get quotes via WhatsApp. Fast delivery.",
+    keywords: "laboratory chemicals, medical equipment, biotechnology equipment, laboratory reagents, diagnostic tools, Kenya, supplier, laboratory instruments, quality chemicals, medical supplies, chromatography consumables, water testing equipment, microbiology media, quality control equipment, Nairobi",
     type: "website",
     canonical: "https://morisenterprises.com/",
+    breadcrumbs: [
+      { name: "Home", url: "https://morisenterprises.com/" },
+    ],
   });
 
   return (
