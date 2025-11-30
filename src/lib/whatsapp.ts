@@ -55,6 +55,14 @@ export const openWhatsApp = (message: string, target: string = "_blank"): void =
   window.open(link, target);
 };
 
+export const openProductQuotation = (productName: string, target: string = "_blank"): void => {
+  const message = createWhatsAppMessage({
+    productName: productName,
+    message: "Please provide details and pricing.",
+  });
+  openWhatsApp(message, target);
+};
+
 export const getWhatsAppNumber = (): string => WHATSAPP_PHONE;
 
 export const getWhatsAppNumberClean = (): string => WHATSAPP_PHONE_CLEAN;
