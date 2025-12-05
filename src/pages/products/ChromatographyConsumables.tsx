@@ -242,7 +242,7 @@ const ChromatographyConsumables = () => {
           <li>Water quality testing (VOC, COD, PFAS)</li>
           <li>Pharmaceutical and drug testing</li>
           <li>Food and beverage analysis</li>
-          <li>Clinical and biomedical research</li>
+          <li>Clinical and laboratory research</li>
           <li>Industrial quality control</li>
         </ul>
       </div>

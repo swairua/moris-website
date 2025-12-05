@@ -36,7 +36,7 @@ const Gallery = () => {
   usePageMeta({
     title: "Laboratory Gallery | Moris Enterprises Kenya",
     description: "Explore our comprehensive gallery showcasing premium laboratory chemicals, equipment, and solutions. View high-quality images of our products and facilities.",
-    keywords: "laboratory gallery, chemical products, laboratory equipment, laboratory images, biomedical solutions, Kenya",
+    keywords: "laboratory gallery, chemical products, laboratory equipment, laboratory images, laboratory solutions, Kenya",
     type: "website",
     canonical: "https://morisenterprises.com/gallery",
     breadcrumbs: [
