@@ -168,24 +168,52 @@ export const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Slide-in Sidebar Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-100 py-6 animate-fade-in">
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={item.action}
-                  className="text-foreground hover:text-primary hover:bg-primary/5 transition-all px-4 py-3 rounded-lg font-medium text-left"
-                >
-                  {item.label}
-                </button>
-              ))}
+          <>
+            {/* Overlay */}
+            <div
+              className="fixed inset-0 bg-black/30 z-40 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
 
-              {/* Mobile Products Menu */}
+            {/* Slide-in Panel */}
+            <div className="fixed left-0 top-0 h-screen w-80 max-w-[90vw] bg-white z-50 lg:hidden overflow-y-auto shadow-xl transform transition-transform duration-300">
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                <div className="flex items-center gap-2">
+                  <img
+                    src={logo}
+                    alt="Moris Enterprises"
+                    className="h-10 w-10 object-contain"
+                  />
+                  <span className="font-display font-bold text-foreground">Menu</span>
+                </div>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-all"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Main Navigation */}
+              <div className="flex flex-col gap-1 p-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.label}
+                    onClick={item.action}
+                    className="text-foreground hover:text-primary hover:bg-primary/5 transition-all px-4 py-3 rounded-lg font-medium text-left"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Laboratory Products Section */}
               <div className="border-t border-gray-100 pt-4 mt-2">
-                <p className="text-sm font-bold text-foreground px-4 mb-3">Biomedical Products</p>
-                <div className="grid grid-cols-2 gap-2 px-2">
+                <p className="text-sm font-bold text-foreground px-6 mb-4">Laboratory Products</p>
+                <div className="flex flex-col gap-2 px-4">
                   {productCategories.map((category) => {
                     const IconComponent = category.icon;
                     return (
@@ -195,7 +223,7 @@ export const Navigation = () => {
                           navigate(category.path);
                           setIsMobileMenuOpen(false);
                         }}
-                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all"
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-primary/5 transition-all text-left"
                       >
                         <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />
                         <span className="text-sm font-medium text-foreground line-clamp-2">
@@ -207,8 +235,8 @@ export const Navigation = () => {
                 </div>
               </div>
 
-              {/* Mobile CTA */}
-              <div className="border-t border-gray-100 pt-4 mt-4 px-2">
+              {/* CTA Section */}
+              <div className="border-t border-gray-100 p-4 mt-4">
                 <Button
                   onClick={() => scrollToSection("contact")}
                   className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold rounded-lg py-3 h-auto"
@@ -217,7 +245,7 @@ export const Navigation = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
