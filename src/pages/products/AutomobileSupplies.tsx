@@ -97,17 +97,66 @@ const AutomobileSupplies = () => {
 
       <div className="mt-12 prose prose-lg max-w-none">
         <h2 className="text-3xl font-display font-bold text-foreground mb-4">
-          Premium KOMU Coils Springs & Suspension Components
+          Premium KOMU Coils Springs & Suspension Components for Kenya
         </h2>
         <p className="text-muted-foreground leading-relaxed">
-          We provide a comprehensive selection of KOMU Coils Springs and professional-grade suspension equipment designed 
-          to meet the demanding needs of modern automotive service centers. Our products combine precision engineering, 
-          reliability, and durability to support accurate diagnostics and efficient vehicle maintenance workflows.
+          Moris Enterprises is your trusted supplier of KOMU Coils Springs and professional-grade suspension components across Kenya.
+          Our KOMU suspension coils are engineered for durability, reliability, and optimal vehicle performance. Whether you operate an
+          automotive service center or manage a fleet, our KOMU coil springs deliver consistent quality and load-bearing performance
+          for all vehicle types.
         </p>
-        <p className="text-muted-foreground leading-relaxed mt-4">
-          Whether you need suspension coils for routine maintenance or premium-grade components for heavy-duty applications, 
-          our team is ready to assist you with competitive pricing and professional service. Contact us via WhatsApp for 
-          quick quotations and product information.
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-8 mb-4">
+          Why Choose KOMU Coils Springs?
+        </h3>
+        <ul className="text-muted-foreground leading-relaxed">
+          <li><strong>Engineered Durability:</strong> KOMU suspension springs are designed for maximum load capacity and extended lifespan</li>
+          <li><strong>Professional Grade:</strong> KOMU coil springs meet automotive industry standards for reliability and safety</li>
+          <li><strong>Multiple Variants:</strong> Blue, Yellow, Dark Blue, Orange/Red, Standard, and Premium grades available</li>
+          <li><strong>Kenya-Focused Supply:</strong> Competitive pricing for automotive repair shops and vehicle maintenance centers</li>
+          <li><strong>Professional Service:</strong> Expert support and quick quotations via WhatsApp</li>
+        </ul>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-8 mb-4">
+          KOMU Coils Springs - Specifications & Applications
+        </h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Our KOMU suspension coils are available in various grades to meet different automotive needs. Each KOMU variant is tested
+          for load capacity, tensile strength, and corrosion resistance. KOMU springs are suitable for sedan suspensions, commercial
+          vehicle applications, and heavy-duty vehicle maintenance. Kenya's road conditions demand reliable suspension components, and
+          KOMU coil springs deliver the durability automotive professionals trust.
+        </p>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-8 mb-4">
+          Frequently Asked Questions - KOMU Coils Springs
+        </h3>
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold text-foreground">What load capacity do KOMU coil springs have?</h4>
+            <p className="text-muted-foreground mt-2">KOMU suspension springs are engineered with varying load capacities depending on the grade.
+            Our Standard and Blue variants suit sedans, while Yellow and Dark Blue are ideal for commercial vehicles. Premium grade KOMU springs
+            provide maximum load-bearing capacity for heavy-duty applications.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground">Are KOMU coil springs corrosion-resistant?</h4>
+            <p className="text-muted-foreground mt-2">Yes, KOMU coils springs feature protective finishes to resist corrosion in Kenya's humid climate.
+            Each KOMU variant undergoes quality testing to ensure durability and long-term performance.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground">Can I get a quotation for bulk KOMU springs orders?</h4>
+            <p className="text-muted-foreground mt-2">Absolutely! Contact us via WhatsApp for bulk pricing on KOMU coil springs. We offer competitive rates
+            for automotive service centers and vehicle maintenance shops ordering multiple KOMU suspension components.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground">How quickly can you deliver KOMU springs in Kenya?</h4>
+            <p className="text-muted-foreground mt-2">Moris Enterprises maintains stock of popular KOMU variants for fast delivery across Kenya.
+            Request a quotation for your specific KOMU springs requirements and delivery timeline.</p>
+          </div>
+        </div>
+
+        <p className="text-muted-foreground leading-relaxed mt-8">
+          Whether you need a single KOMU coil spring or bulk KOMU suspension components for your automotive business, our team is ready
+          to assist with competitive pricing and professional service. Contact us via WhatsApp to discuss your KOMU springs requirements.
         </p>
       </div>
     </ProductPageLayout>
