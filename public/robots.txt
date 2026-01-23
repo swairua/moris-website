@@ -20,7 +20,6 @@ Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://morisenterprises.com/sitemap.xml
-Sitemap: https://morisenterprises.com/sitemap-products.xml
 
 # Block bad bots
 User-agent: MJ12bot
