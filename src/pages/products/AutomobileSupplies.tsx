@@ -8,37 +8,37 @@ import { openProductQuotation } from "@/lib/whatsapp";
 const products = [
   {
     name: "KOMU Coils Springs - Blue",
-    description: "High-quality suspension coils springs in blue finish. Professional-grade automobile suspension components for reliable vehicle performance.",
+    description: "KOMU Blue suspension coil springs - premium-grade automotive suspension components. High tensile strength, corrosion-resistant finish. Load-bearing capacity engineered for sedan vehicles. Professional automotive parts supplier in Kenya.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F8564aa54272b435f8016c3550366fdc1?format=webp&width=800",
   },
   {
     name: "KOMU Coils Springs - Yellow",
-    description: "Premium suspension coil springs in vibrant yellow finish. Engineered for optimal vehicle suspension and stability.",
+    description: "KOMU Yellow suspension springs - premium coil springs for enhanced vehicle suspension. Superior load-bearing capacity for commercial vehicles. Durable automotive suspension components for Kenya's demanding roads.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fcc3a9f9a91fc4250a63e8a11a65028bd?format=webp&width=800",
   },
   {
     name: "KOMU Coils Springs - Dark Blue",
-    description: "Durable dark blue coils springs designed for superior suspension performance. Ideal for automotive service centers and repairs.",
+    description: "KOMU Dark Blue coil springs - heavy-duty suspension components for reliable vehicle performance. Engineered for longevity and stability. Professional-grade KOMU springs trusted by automotive service centers across Kenya.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F278e671287c74a3db3a9a7e0e1513949?format=webp&width=800",
   },
   {
     name: "KOMU Coils Springs - Orange/Red",
-    description: "High-performance suspension coil springs in orange-red finish. Built for heavy-duty automotive applications.",
+    description: "KOMU Orange-Red suspension coil springs - high-performance springs for heavy-duty automotive applications. Maximum durability for trucks and commercial vehicles. KOMU coils engineered for superior suspension control.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Fa138c58dc0d44e1c80507118fe1a6ae8?format=webp&width=800",
   },
   {
     name: "KOMU Coils Springs - Standard",
-    description: "Standard suspension coils springs for everyday automotive maintenance and repair. Reliable and durable performance.",
+    description: "KOMU Standard suspension coil springs - reliable automotive springs for routine vehicle maintenance. Consistent performance for everyday repair needs. KOMU springs - trusted choice for professional auto repair in Kenya.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Ff89232996c3b4494b45abcf5e8d2d4b4?format=webp&width=800",
   },
   {
     name: "KOMU Coils Springs - Premium Suspension",
-    description: "Premium grade suspension components for complete vehicle suspension overhaul. Maximum durability and performance.",
+    description: "KOMU Premium suspension springs - top-tier coil springs for complete vehicle suspension overhaul. Superior load capacity and durability. KOMU premium components - engineered for maximum vehicle performance and safety.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2F26872f98e1bc469c95cbe083f66457f9?format=webp&width=800",
   },
   {
     name: "Automotive Shock Absorbers",
-    description: "Professional-grade shock absorbers designed for optimal vehicle suspension control and stability.",
+    description: "Professional-grade shock absorbers designed for optimal vehicle suspension control. Compatible with KOMU suspension systems. Premium quality automotive shock absorbers for Kenya.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F03ba6d13283e4f6e88691a5c602fc9e3%2Ffad79b65501a4b4b95e1a64b6e08a0e5?format=webp&width=800",
   },
 ];
