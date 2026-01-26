@@ -162,7 +162,10 @@ export const Navigation = () => {
 
             {/* CTA Button */}
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => {
+                trackEvent('request_quote_clicked', { location: 'desktop_nav' });
+                scrollToSection("contact");
+              }}
               className="ml-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-lg px-6 py-2 h-auto"
             >
               Request Quote
