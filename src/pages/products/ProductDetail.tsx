@@ -167,7 +167,14 @@ const ProductDetail = () => {
               </div>
 
               <Button
-                onClick={() => openProductQuotation(product.name)}
+                onClick={() => {
+                  trackEvent('product_quotation_requested', {
+                    product_id: product.id,
+                    product_name: product.name,
+                    category: product.category,
+                  });
+                  openProductQuotation(product.name);
+                }}
                 size="lg"
                 className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-6"
               >
