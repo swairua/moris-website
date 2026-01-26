@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { useAnalytics } from "@/hooks/use-analytics";
 import { openProductQuotation } from "@/lib/whatsapp";
 import { getProductBySlug, automobileProducts } from "@/data/automobileProducts";
 import NotFound from "@/pages/NotFound";
