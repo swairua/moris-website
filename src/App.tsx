@@ -24,6 +24,14 @@ import ProductDetail from "./pages/products/ProductDetail";
 
 const queryClient = new QueryClient();
 
-const App = () => <div style={{ padding: '20px' }}>Hello World - App is loading</div>;
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Toaster />
+      <Sonner />
+      <div style={{ padding: '20px' }}>App is loading with providers</div>
+    </BrowserRouter>
+  </QueryClientProvider>
+);
 
 export default App;
