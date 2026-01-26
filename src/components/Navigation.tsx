@@ -252,7 +252,10 @@ export const Navigation = () => {
               {/* CTA Section */}
               <div className="border-t border-gray-100 p-4 mt-4">
                 <Button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => {
+                    trackEvent('request_quote_clicked', { location: 'mobile_nav' });
+                    scrollToSection("contact");
+                  }}
                   className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold rounded-lg py-3 h-auto"
                 >
                   Request Quote
