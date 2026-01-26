@@ -215,7 +215,10 @@ export const Navigation = () => {
                 {navItems.map((item) => (
                   <button
                     key={item.label}
-                    onClick={item.action}
+                    onClick={() => {
+                      trackEvent('mobile_nav_link_clicked', { link: item.label });
+                      item.action();
+                    }}
                     className="text-foreground hover:text-primary hover:bg-primary/5 transition-all px-4 py-3 rounded-lg font-medium text-left"
                   >
                     {item.label}
