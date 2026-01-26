@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { automobileProducts } from "@/data/automobileProducts";
 
 const AutomobileSupplies = () => {
+  const navigate = useNavigate();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
