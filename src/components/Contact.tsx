@@ -60,6 +60,7 @@ export const Contact = () => {
 
     // Validation
     if (!formData.name?.trim() || !formData.email?.trim() || !formData.phone?.trim() || !formData.message?.trim()) {
+      trackEvent('contact_form_validation_error', { error_type: 'missing_fields' });
       toast({
         title: "Please fill all fields",
         description: "All fields are required to send your inquiry.",
@@ -71,6 +72,7 @@ export const Contact = () => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
+      trackEvent('contact_form_validation_error', { error_type: 'invalid_email' });
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -81,6 +83,7 @@ export const Contact = () => {
 
     // Phone validation (at least 9 characters)
     if (formData.phone.replace(/\D/g, "").length < 9) {
+      trackEvent('contact_form_validation_error', { error_type: 'invalid_phone' });
       toast({
         title: "Invalid phone number",
         description: "Please enter a valid phone number.",
@@ -96,6 +99,12 @@ export const Contact = () => {
       email: formData.email,
       phone: formData.phone,
       message: formData.message,
+    });
+
+    // Track successful form submission
+    trackEvent('contact_form_submitted', {
+      form_type: 'contact_inquiry',
+      message_length: formData.message.length,
     });
 
     // Send to WhatsApp
