@@ -282,9 +282,15 @@ const ProductDetail = () => {
                       {relatedProduct.shortDescription}
                     </p>
                     <Button
-                      onClick={() =>
-                        navigate(`/products/automobile-supplies/${relatedProduct.id}`)
-                      }
+                      onClick={() => {
+                        trackEvent('related_product_clicked', {
+                          current_product_id: product.id,
+                          current_product_name: product.name,
+                          related_product_id: relatedProduct.id,
+                          related_product_name: relatedProduct.name,
+                        });
+                        navigate(`/products/automobile-supplies/${relatedProduct.id}`);
+                      }}
                       variant="outline"
                       className="w-full"
                     >
