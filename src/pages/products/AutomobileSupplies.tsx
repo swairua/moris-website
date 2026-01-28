@@ -1,4 +1,5 @@
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
