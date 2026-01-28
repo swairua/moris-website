@@ -222,6 +222,30 @@ const AutomobileSupplies = () => {
           Whether you need a single KOMU coil spring or bulk KOMU suspension components for your automotive business, our team is ready
           to assist with competitive pricing and professional service. Contact us via WhatsApp to discuss your KOMU springs requirements.
         </p>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-12 mb-4">
+          Other Product Categories
+        </h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Moris Enterprises supplies more than just automotive parts. Explore our comprehensive range of laboratory equipment and medical supplies:
+        </p>
+        <ul className="text-muted-foreground space-y-2 mb-6">
+          <li>
+            <strong>Laboratory Equipment:</strong> Professional-grade lab instruments and testing equipment for research facilities
+          </li>
+          <li>
+            <strong>Laboratory Chemicals:</strong> High-purity reagents and chemical supplies for accurate testing and analysis
+          </li>
+          <li>
+            <strong>Medical Equipment:</strong> Professional healthcare instruments and diagnostic devices for medical facilities
+          </li>
+          <li>
+            <strong>Biotechnology Solutions:</strong> Specialized equipment for microbiology and biotechnology applications
+          </li>
+        </ul>
+        <p className="text-muted-foreground leading-relaxed">
+          Visit our <a href="/#services" className="text-primary hover:underline font-semibold">main products page</a> to explore all available product categories and services offered by Moris Enterprises.
+        </p>
       </div>
     </ProductPageLayout>
   );
