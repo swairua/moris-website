@@ -99,6 +99,15 @@ const AutomobileSupplies = () => {
       title="Automobile Supplies"
       description="Our comprehensive range of KOMU Coils Springs and professional-grade suspension components designed for automotive service centers and vehicle maintenance."
     >
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/#services" },
+          { name: "Automobile Supplies", url: "/products/automobile-supplies" },
+        ]}
+      />
+
       {/* Mobile Horizontal Scroll (Small screens) */}
       <div className="md:hidden mb-12">
         <div className="relative">
