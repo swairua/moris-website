@@ -16,6 +16,11 @@ export interface AutomobileProduct {
   };
   category: string;
   price?: string;
+  priceRange?: {
+    minPrice: number;
+    maxPrice: number;
+    currency: string;
+  };
   availability?: string;
 }
 
