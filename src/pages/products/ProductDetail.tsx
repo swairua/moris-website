@@ -236,6 +236,17 @@ const ProductDetail = () => {
                   via WhatsApp
                 </li>
               </ul>
+
+              <p className="text-muted-foreground leading-relaxed mt-6">
+                For optimal suspension performance, consider pairing your coil springs with our{" "}
+                <button
+                  onClick={() => navigate("/products/automobile-supplies")}
+                  className="text-primary hover:underline font-semibold"
+                >
+                  professional-grade shock absorbers
+                </button>
+                . Our complete suspension solutions ensure smooth handling and vehicle stability across Kenya's varied road conditions.
+              </p>
             </>
           )}
 
@@ -266,6 +277,17 @@ const ProductDetail = () => {
                   WhatsApp
                 </li>
               </ul>
+
+              <p className="text-muted-foreground leading-relaxed mt-6">
+                For complete suspension system upgrades, pair these shock absorbers with our full range of{" "}
+                <button
+                  onClick={() => navigate("/products/automobile-supplies")}
+                  className="text-primary hover:underline font-semibold"
+                >
+                  KOMU coil springs
+                </button>
+                . Quality suspension components work together to deliver superior vehicle performance and safety.
+              </p>
             </>
           )}
         </div>
