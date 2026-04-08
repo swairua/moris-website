@@ -3,6 +3,8 @@
  * Handles Google Analytics 4, Meta Pixel, and custom event tracking
  */
 
+import { API_BASE_URL } from './utils';
+
 // Meta Pixel ID
 const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '';
 
@@ -167,7 +169,7 @@ export function trackPageView(pageData?: Record<string, any>) {
       page_url: window.location.href,
       ...eventData,
     };
-    navigator.sendBeacon('/api.php/tracking/pixel', JSON.stringify(trackingData));
+    navigator.sendBeacon(`${API_BASE_URL}/tracking/pixel`, JSON.stringify(trackingData));
   }
 }
 
@@ -206,7 +208,7 @@ export function trackEmailInteraction(action: 'open' | 'click', trackingData?: R
 
   // Send to backend
   if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api.php/tracking/pixel', JSON.stringify(eventData));
+    navigator.sendBeacon(`${API_BASE_URL}/tracking/pixel`, JSON.stringify(eventData));
   }
 }
 

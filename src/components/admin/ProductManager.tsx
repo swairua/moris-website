@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/dialog';
 import { toast } from '@/components/ui/sonner';
 import { Plus, Trash2 } from 'lucide-react';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface Product {
   id: number;
@@ -55,7 +56,7 @@ export function ProductManager() {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api.php/products?limit=100', {
+      const response = await fetch(`${API_BASE_URL}/products?limit=100`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -74,7 +75,7 @@ export function ProductManager() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api.php/products', {
+      const response = await fetch(`${API_BASE_URL}/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +103,7 @@ export function ProductManager() {
     if (!confirm('Are you sure?')) return;
 
     try {
-      const response = await fetch(`/api.php/products/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/products/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

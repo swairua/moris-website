@@ -15,9 +15,14 @@ class AuthHandler {
      */
     public function login() {
         try {
-            $input = json_decode(file_get_contents('php://input'), true);
+            $raw_input = file_get_contents('php://input');
+            $input = json_decode($raw_input, true);
+            $email = isset($input['email']) ? trim($input['email']) : 'missing';
 
-            if (!isset($input['email']) || !isset($input['password'])) {
+            error_log(sprintf('[auth] Login attempt received for email=%s', $email));
+
+            if (!is_array($input) || !isset($input['email']) || !isset($input['password'])) {
+                error_log('[auth] Login request missing required fields or contains invalid JSON');
                 http_response_code(400);
                 echo json_encode(['error' => 'Email and password are required']);
                 return;
@@ -33,6 +38,7 @@ class AuthHandler {
             );
 
             if (!$user) {
+                error_log(sprintf('[auth] Login failed: user not found for email=%s', $email));
                 http_response_code(401);
                 echo json_encode(['error' => 'Invalid credentials']);
                 return;
@@ -40,6 +46,7 @@ class AuthHandler {
 
             // Verify password
             if (!password_verify($password, $user['password_hash'])) {
+                error_log(sprintf('[auth] Login failed: invalid password for email=%s', $email));
                 http_response_code(401);
                 echo json_encode(['error' => 'Invalid credentials']);
                 return;
@@ -48,6 +55,7 @@ class AuthHandler {
             // Generate JWT token
             $token = AuthMiddleware::generateToken($user['id'], $user['email']);
 
+            error_log(sprintf('[auth] Login successful for user_id=%s email=%s', $user['id'], $email));
             http_response_code(200);
             echo json_encode([
                 'token' => $token,
@@ -58,6 +66,7 @@ class AuthHandler {
                 ]
             ]);
         } catch (Exception $e) {
+            error_log(sprintf('[auth] Login exception: %s', $e->getMessage()));
             http_response_code(500);
             echo json_encode(['error' => $e->getMessage()]);
         }
@@ -76,6 +85,7 @@ class AuthHandler {
      */
     public function verify() {
         try {
+            error_log('[auth] Token verification requested');
             AuthMiddleware::verify();
 
             $user_id = $_REQUEST['user_id'];
@@ -87,17 +97,20 @@ class AuthHandler {
             );
 
             if (!$user) {
+                error_log(sprintf('[auth] Token verification failed: user not found for user_id=%s', $user_id));
                 http_response_code(401);
                 echo json_encode(['error' => 'User not found']);
                 return;
             }
 
+            error_log(sprintf('[auth] Token verification successful for user_id=%s', $user_id));
             http_response_code(200);
             echo json_encode([
                 'user' => $user,
                 'valid' => true
             ]);
         } catch (Exception $e) {
+            error_log(sprintf('[auth] Token verification failed: %s', $e->getMessage()));
             http_response_code(401);
             echo json_encode(['error' => $e->getMessage()]);
         }

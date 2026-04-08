@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/dialog';
 import { toast } from '@/components/ui/sonner';
 import { Plus, Mail } from 'lucide-react';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface Campaign {
   id: number;
@@ -54,7 +55,7 @@ export function CampaignManager() {
   const fetchCampaigns = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api.php/campaigns?limit=50', {
+      const response = await fetch(`${API_BASE_URL}/campaigns?limit=50`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -73,7 +74,7 @@ export function CampaignManager() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api.php/campaigns', {
+      const response = await fetch(`${API_BASE_URL}/campaigns`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

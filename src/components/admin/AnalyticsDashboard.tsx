@@ -5,6 +5,7 @@ import { TopBar } from './TopBar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { toast } from '@/components/ui/sonner';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface AnalyticsData {
   total_leads: number;
@@ -27,8 +28,8 @@ export function AnalyticsDashboard() {
     try {
       // Fetch all necessary data
       const [leadsRes, customersRes] = await Promise.all([
-        fetch('/api.php/leads?limit=1', { headers: { 'Authorization': `Bearer ${token}` } }),
-        fetch('/api.php/customers?limit=1', { headers: { 'Authorization': `Bearer ${token}` } })
+        fetch(`${API_BASE_URL}/leads?limit=1`, { headers: { 'Authorization': `Bearer ${token}` } }),
+        fetch(`${API_BASE_URL}/customers?limit=1`, { headers: { 'Authorization': `Bearer ${token}` } })
       ]);
 
       const leadsData = await leadsRes.json();

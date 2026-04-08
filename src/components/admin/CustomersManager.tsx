@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Eye } from 'lucide-react';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface Customer {
   id: number;
@@ -48,7 +49,7 @@ export function CustomersManager() {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      let url = '/api.php/customers?limit=100';
+      let url = `${API_BASE_URL}/customers?limit=100`;
       if (statusFilter) {
         url += `&status=${statusFilter}`;
       }

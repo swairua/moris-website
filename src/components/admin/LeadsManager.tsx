@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/sonner';
 import { Eye, ChevronRight } from 'lucide-react';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface Lead {
   id: number;
@@ -51,7 +52,7 @@ export function LeadsManager() {
   const fetchLeads = async () => {
     try {
       setLoading(true);
-      let url = '/api.php/leads?limit=100';
+      let url = `${API_BASE_URL}/leads?limit=100`;
       if (statusFilter) {
         url += `&status=${statusFilter}`;
       }
