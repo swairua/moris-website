@@ -103,9 +103,18 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-background/20 pt-8">
-          <p className="text-center text-background/60">
-            © {new Date().getFullYear()} Moris One Enterprises. All rights reserved.
-          </p>
+          <div className="flex justify-between items-center">
+            <p className="text-center flex-1 text-background/60">
+              © {new Date().getFullYear()} Moris One Enterprises. All rights reserved.
+            </p>
+            <a
+              href="/admin/login"
+              className="text-xs text-background/40 hover:text-background/60 transition-colors ml-4"
+              title="Admin Portal"
+            >
+              Admin
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { useAnalyticsPageTracking } from "@/hooks/use-analytics";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MedicalEquipment from "./pages/products/MedicalEquipment";
@@ -22,6 +24,13 @@ import EquipmentQualityControl from "./pages/products/EquipmentQualityControl";
 import Filtration from "./pages/products/Filtration";
 import LaboratoryMaterialTesting from "./pages/products/LaboratoryMaterialTesting";
 import ProductDetail from "./pages/products/ProductDetail";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import { LeadsManager } from "@/components/admin/LeadsManager";
+import { CustomersManager } from "@/components/admin/CustomersManager";
+import { CampaignManager } from "@/components/admin/CampaignManager";
+import { ProductManager } from "@/components/admin/ProductManager";
+import { AnalyticsDashboard } from "@/components/admin/AnalyticsDashboard";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +64,16 @@ const AppRoutes = () => {
         <Route path="/products/laboratory-material-testing" element={<LaboratoryMaterialTesting />} />
         <Route path="/products/automobile-supplies" element={<AutomobileSupplies />} />
         <Route path="/products/automobile-supplies/:productId" element={<ProductDetail />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/admin/leads" element={<ProtectedRoute><LeadsManager /></ProtectedRoute>} />
+        <Route path="/admin/customers" element={<ProtectedRoute><CustomersManager /></ProtectedRoute>} />
+        <Route path="/admin/campaigns" element={<ProtectedRoute><CampaignManager /></ProtectedRoute>} />
+        <Route path="/admin/products" element={<ProtectedRoute><ProductManager /></ProtectedRoute>} />
+        <Route path="/admin/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -65,7 +84,9 @@ const AppRoutes = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <AppRoutes />
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
     </BrowserRouter>
   </QueryClientProvider>
 );
