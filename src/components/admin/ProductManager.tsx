@@ -55,7 +55,7 @@ export function ProductManager() {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/products?limit=100', {
+      const response = await fetch('/api.php/products?limit=100', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -74,7 +74,7 @@ export function ProductManager() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/products', {
+      const response = await fetch('/api.php/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ export function ProductManager() {
     if (!confirm('Are you sure?')) return;
 
     try {
-      const response = await fetch(`/api/products/${id}`, {
+      const response = await fetch(`/api.php/products/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

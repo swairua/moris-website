@@ -27,8 +27,8 @@ export function AnalyticsDashboard() {
     try {
       // Fetch all necessary data
       const [leadsRes, customersRes] = await Promise.all([
-        fetch('/api/leads?limit=1', { headers: { 'Authorization': `Bearer ${token}` } }),
-        fetch('/api/customers?limit=1', { headers: { 'Authorization': `Bearer ${token}` } })
+        fetch('/api.php/leads?limit=1', { headers: { 'Authorization': `Bearer ${token}` } }),
+        fetch('/api.php/customers?limit=1', { headers: { 'Authorization': `Bearer ${token}` } })
       ]);
 
       const leadsData = await leadsRes.json();

@@ -48,7 +48,7 @@ export function CustomersManager() {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      let url = '/api/customers?limit=100';
+      let url = '/api.php/customers?limit=100';
       if (statusFilter) {
         url += `&status=${statusFilter}`;
       }

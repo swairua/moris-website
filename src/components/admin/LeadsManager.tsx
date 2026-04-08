@@ -51,7 +51,7 @@ export function LeadsManager() {
   const fetchLeads = async () => {
     try {
       setLoading(true);
-      let url = '/api/leads?limit=100';
+      let url = '/api.php/leads?limit=100';
       if (statusFilter) {
         url += `&status=${statusFilter}`;
       }

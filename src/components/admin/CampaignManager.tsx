@@ -54,7 +54,7 @@ export function CampaignManager() {
   const fetchCampaigns = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/campaigns?limit=50', {
+      const response = await fetch('/api.php/campaigns?limit=50', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -73,7 +73,7 @@ export function CampaignManager() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/campaigns', {
+      const response = await fetch('/api.php/campaigns', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
