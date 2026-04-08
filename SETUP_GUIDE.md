@@ -57,14 +57,14 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=your-app-specific-password
-ADMIN_EMAIL=admin@moris.co.ke
+ADMIN_EMAIL=admin@morisentreprises.com
 APP_ENV=production
 ```
 
 ### 3. Default Admin User
 
 The migration creates a default admin user:
-- **Email:** admin@moris.co.ke
+- **Email:** admin@morisentreprises.com
 - **Password:** admin123
 
 **Change the default password immediately after first login!**
@@ -133,7 +133,7 @@ Expected response: `201 Created` with `lead_id`
 curl -X POST http://localhost:5173/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "admin@moris.co.ke",
+    "email": "admin@morisentreprises.com",
     "password": "admin123"
   }'
 ```
@@ -181,7 +181,7 @@ curl -X POST http://localhost:5173/api/products \
 #### 1. Test Admin Login
 1. Navigate to `http://localhost:5173/admin/login`
 2. Enter credentials:
-   - Email: `admin@moris.co.ke`
+   - Email: `admin@morisentreprises.com`
    - Password: `admin123`
 3. Click "Sign in"
 4. Should redirect to `/admin` dashboard
