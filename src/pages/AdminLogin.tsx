@@ -40,7 +40,6 @@ export default function AdminLogin() {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium">Email</label>
               <Input
                 type="email"
                 placeholder="admin@moris.co.ke"
