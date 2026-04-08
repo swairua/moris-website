@@ -5,6 +5,7 @@ import { TopBar } from '@/components/admin/TopBar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, UserCheck, Mail, TrendingUp } from 'lucide-react';
 import { toast } from '@/components/ui/sonner';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface DashboardStats {
   total_leads: number;
@@ -33,7 +34,7 @@ export default function AdminDashboard() {
 
   const fetchDashboardStats = async () => {
     try {
-      const response = await fetch('/api.php/analytics', {
+      const response = await fetch(`${API_BASE_URL}/analytics`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -43,19 +44,19 @@ export default function AdminDashboard() {
         const data = await response.json();
         
         // Get leads count
-        const leadsRes = await fetch('/api.php/leads?limit=1', {
+        const leadsRes = await fetch(`${API_BASE_URL}/leads?limit=1`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const leadsData = await leadsRes.json();
         
         // Get customers count
-        const customersRes = await fetch('/api.php/customers?limit=1', {
+        const customersRes = await fetch(`${API_BASE_URL}/customers?limit=1`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const customersData = await customersRes.json();
         
         // Get campaigns count
-        const campaignsRes = await fetch('/api.php/campaigns?limit=1', {
+        const campaignsRes = await fetch(`${API_BASE_URL}/campaigns?limit=1`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const campaignsData = await campaignsRes.json();

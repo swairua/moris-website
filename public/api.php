@@ -63,10 +63,13 @@ if (empty($route)) {
 
 $method = $_SERVER['REQUEST_METHOD'];
 
+error_log(sprintf('[api] %s %s -> %s', $method, $_SERVER['REQUEST_URI'] ?? '', $route));
+
 // Route handling
 try {
     // Auth routes (public)
     if ($route === '/auth/login' && $method === 'POST') {
+        error_log('[api] Handling auth login request');
         $handler = new AuthHandler();
         $handler->login();
     } elseif ($route === '/auth/logout' && $method === 'POST') {
@@ -182,11 +185,13 @@ try {
             $handler->getStats();
         }
         else {
+            error_log(sprintf('[api] Endpoint not found for route=%s method=%s', $route, $method));
             http_response_code(404);
             echo json_encode(['error' => 'Endpoint not found']);
         }
     }
 } catch (Exception $e) {
+    error_log(sprintf('[api] Unhandled exception for route=%s method=%s: %s', $route, $method, $e->getMessage()));
     http_response_code(500);
     echo json_encode([
         'error' => 'Server error',

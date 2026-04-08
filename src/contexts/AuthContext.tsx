@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { API_BASE_URL } from '@/lib/utils';
 
 interface User {
   id: number;
@@ -22,6 +23,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const parseApiResponse = async (response: Response) => {
+    const text = await response.text();
+
+    if (!text) {
+      return null;
+    }
+
+    try {
+      return JSON.parse(text);
+    } catch (error) {
+      console.error('Failed to parse API response:', error);
+      throw new Error('Invalid API response from server');
+    }
+  };
+
   // Load token from localStorage on mount
   useEffect(() => {
     const storedToken = localStorage.getItem('admin_token');
@@ -36,15 +52,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const verifyToken = async (token: string) => {
     try {
-      const response = await fetch('/api.php/auth/verify', {
+      const response = await fetch(`${API_BASE_URL}/auth/verify`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
 
       if (response.ok) {
-        const data = await response.json();
-        setUser(data.user);
+        const data = await parseApiResponse(response);
+        setUser(data?.user ?? null);
       } else {
         // Token invalid, clear it
         localStorage.removeItem('admin_token');
@@ -61,7 +77,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch('/api.php/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -70,12 +86,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       });
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Login failed');
+        const error = await parseApiResponse(response);
+        throw new Error(error?.error || 'Login failed');
       }
 
-      const data = await response.json();
-      const newToken = data.token;
+      const data = await parseApiResponse(response);
+      const newToken = data?.token;
+
+      if (!newToken || !data?.user) {
+        throw new Error('Invalid login response');
+      }
 
       // Store token
       localStorage.setItem('admin_token', newToken);
