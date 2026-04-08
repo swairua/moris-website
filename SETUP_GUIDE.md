@@ -138,6 +138,13 @@ curl -X POST http://localhost:5173/api/auth/login \
   }'
 ```
 
+Backend login flow:
+1. Prepare a lookup for the active user by email
+2. Bind the email and `active` status as parameters
+3. Fetch the row with `get_result()` / `fetch_assoc()`
+4. Verify the password with `password_verify()`
+5. Return `token` and `user` on success
+
 Expected response: `200 OK` with `token` and `user` object
 
 #### 3. Test Protected Endpoint (Leads List)

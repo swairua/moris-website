@@ -153,6 +153,7 @@ rm /var/www/morientreprises.com/migrations.sql
 
 - [ ] Check homepage: `https://morientreprises.com`
 - [ ] Test login: `https://morientreprises.com/admin/login`
+  - Login lookup should use a prepared statement against the active admin email, then `password_verify()`
 - [ ] Test API: `https://morientreprises.com/api.php/auth/verify`
 - [ ] Check uploads: Try uploading a file in admin
 - [ ] Verify analytics: Check Google Analytics is tracking
