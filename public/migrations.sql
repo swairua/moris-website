@@ -210,6 +210,26 @@ INSERT INTO products (name, description, category, price, stock, status, sku) VA
 ON DUPLICATE KEY UPDATE updated_at = CURRENT_TIMESTAMP;
 
 -- ============================================================================
+-- 9. FILE_UPLOADS TABLE - Track uploaded files
+-- ============================================================================
+CREATE TABLE IF NOT EXISTS file_uploads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  filename VARCHAR(255) NOT NULL COMMENT 'Hashed filename',
+  original_name VARCHAR(255) NOT NULL COMMENT 'Original filename',
+  file_type VARCHAR(100) COMMENT 'products, campaigns, documents',
+  file_path VARCHAR(500) NOT NULL COMMENT 'Physical file path',
+  file_url VARCHAR(500) NOT NULL COMMENT 'Public URL to file',
+  file_size INT COMMENT 'File size in bytes',
+  mime_type VARCHAR(100) COMMENT 'MIME type',
+  uploaded_by INT COMMENT 'User ID who uploaded',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (uploaded_by) REFERENCES users(id) ON DELETE SET NULL,
+  INDEX idx_file_type (file_type),
+  INDEX idx_created_at (created_at),
+  INDEX idx_uploaded_by (uploaded_by)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================================================
 -- CREATE INDEXES FOR PERFORMANCE
 -- ============================================================================
 CREATE INDEX idx_leads_email_status ON leads(email, status);
