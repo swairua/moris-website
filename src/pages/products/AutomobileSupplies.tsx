@@ -20,7 +20,7 @@ const AutomobileSupplies = () => {
     description: "Premium KOMU Coils Springs and suspension components for automotive service centers. Professional-grade coil springs, shock absorbers, and suspension parts in Kenya. Get competitive quotations for high-quality auto suspension components.",
     keywords: "KOMU Coils Springs, KOMU Coils, KOMU, suspension coils, suspension springs, coils, car coils, coil springs, KOMU suspension components, coil springs Kenya, auto parts Kenya, shock absorbers, vehicle suspension, automobile supplies",
     type: "article",
-    canonical: "https://morisenterprises.com/products/automobile-supplies",
+    canonical: "https://morisentreprises.com/products/automobile-supplies",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

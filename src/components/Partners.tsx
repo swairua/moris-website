@@ -30,13 +30,13 @@ export const Partners = () => {
           "@type": "ListItem",
           position: 1,
           name: "Moris Enterprises",
-          item: "https://morisenterprises.com",
+          item: "https://morisentreprises.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Partners",
-          item: "https://morisenterprises.com/#partners",
+          item: "https://morisentreprises.com/#partners",
         },
       ],
     };
@@ -45,7 +45,7 @@ export const Partners = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Moris Enterprises",
-      url: "https://morisenterprises.com",
+      url: "https://morisentreprises.com",
       description: "Premier supplier of laboratory chemicals, equipment, and diagnostic instruments in Kenya. Official Palintest distributor.",
       partners: partners.map((partner) => ({
         "@type": "Organization",

@@ -112,7 +112,7 @@ const LaboratoryMaterialTesting = () => {
     description: "Comprehensive laboratory and material testing equipment including autoclaves, microscopes, analyzers, centrifuges, and specialized instruments for research, clinical, and industrial applications.",
     keywords: "laboratory equipment, testing instruments, material testing, autoclave, microscope, centrifuge, analyzer, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/laboratory-material-testing",
+    canonical: "https://morisentreprises.com/products/laboratory-material-testing",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

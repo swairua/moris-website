@@ -24,7 +24,7 @@ export const Contact = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Moris Enterprises",
-      url: "https://morisenterprises.com",
+      url: "https://morisentreprises.com",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Customer Support",

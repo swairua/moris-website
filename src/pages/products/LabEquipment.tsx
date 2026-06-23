@@ -90,7 +90,7 @@ const LabEquipment = () => {
     description: "Advanced laboratory equipment including water filtration systems, deionized water systems, UV sterilizers, and water quality meters. Complete lab solutions for research and quality control.",
     keywords: "laboratory equipment, water filtration, deionized water, UV sterilizers, water quality, lab instruments, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/lab-equipment",
+    canonical: "https://morisentreprises.com/products/lab-equipment",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

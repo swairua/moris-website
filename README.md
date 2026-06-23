@@ -121,7 +121,7 @@ npm run lint
 
 **Email**: [Your Email]
 **Phone**: +254-733-137-332
-**Website**: https://morisenterprises.com
+**Website**: https://morisentreprises.com
 
 ## License
 

@@ -25,7 +25,7 @@ const ProductDetail = () => {
     keywords: product?.keywords || "",
     image: product?.image || "",
     type: "product",
-    canonical: product ? `https://morisenterprises.com/products/automobile-supplies/${product.id}` : "https://morisenterprises.com",
+    canonical: product ? `https://morisentreprises.com/products/automobile-supplies/${product.id}` : "https://morisentreprises.com",
     breadcrumbs: product ? [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

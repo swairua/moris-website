@@ -202,6 +202,7 @@ function buildRoutes(apiProducts) {
 function generateSitemap(routes) {
   const currentDate = new Date().toISOString().split("T")[0];
   const lines = [`<?xml version="1.0" encoding="UTF-8"?>`];
+  lines.push(`<?xml-stylesheet type="text/xsl" href="https://morisentreprises.com/sitemap.xsl"?>`);
   lines.push(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`);
 
   for (const route of routes) {
@@ -209,7 +210,7 @@ function generateSitemap(routes) {
     let priority = "0.8";
 
     if (route.path === "/") {
-      changefreq = "weekly";
+      changefreq = "daily";
       priority = "1.0";
     } else if (route.path.startsWith("/products/")) {
       const parts = route.path.replace("/products/", "").split("/");
@@ -222,8 +223,11 @@ function generateSitemap(routes) {
       }
     }
 
+    // Ensure trailing slash for all URLs except root
+    const locPath = route.path === "/" ? "/" : route.path.replace(/\/?$/, "/");
+
     lines.push(`  <url>`);
-    lines.push(`    <loc>https://morisenterprises.com${route.path}</loc>`);
+    lines.push(`    <loc>https://morisentreprises.com${locPath}</loc>`);
     lines.push(`    <lastmod>${currentDate}</lastmod>`);
     lines.push(`    <changefreq>${changefreq}</changefreq>`);
     lines.push(`    <priority>${priority}</priority>`);
@@ -267,7 +271,7 @@ async function prerender() {
         description: route.description,
         keywords: route.keywords,
         image: route.image,
-        canonical: `https://morisenterprises.com${route.path}`,
+        canonical: `https://morisentreprises.com${route.path}`,
       });
 
       const routeDir = path.join(distDir, route.path);
@@ -336,6 +340,14 @@ async function prerender() {
       if (!fs.existsSync(ud)) {
         fs.mkdirSync(ud, { recursive: true });
       }
+    }
+
+    // Copy sitemap-generator.php to dist
+    const sitemapGen = path.join(__dirname, "../sitemap-generator.php");
+    const distSitemapGen = path.join(distDir, "sitemap-generator.php");
+    if (fs.existsSync(sitemapGen)) {
+      fs.copyFileSync(sitemapGen, distSitemapGen);
+      console.log("[deploy] Copied sitemap-generator.php → dist/sitemap-generator.php");
     }
 
     console.log("[deploy] Cleaned up modular PHP files, uploads ready.");

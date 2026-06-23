@@ -75,7 +75,7 @@ const WasteWaterFiltration = () => {
     description: "Professional wastewater filtration, pool filtration, and water treatment systems. Complete water quality solutions for industrial, municipal, and residential applications in Kenya.",
     keywords: "wastewater filtration, pool filtration, water treatment, filtration systems, water quality, filtration equipment, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/waste-water-filtration",
+    canonical: "https://morisentreprises.com/products/waste-water-filtration",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

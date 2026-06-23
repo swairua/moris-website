@@ -171,7 +171,7 @@ export const injectBreadcrumbSchema = (
       name: item.name,
       item: item.url.startsWith("http")
         ? item.url
-        : `https://morisenterprises.com${item.url}`,
+        : `https://morisentreprises.com${item.url}`,
     })),
   };
 

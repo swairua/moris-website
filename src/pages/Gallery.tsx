@@ -38,7 +38,7 @@ const Gallery = () => {
     description: "Explore our comprehensive gallery showcasing premium laboratory chemicals, equipment, and solutions. View high-quality images of our products and facilities.",
     keywords: "laboratory gallery, chemical products, laboratory equipment, laboratory images, laboratory solutions, Kenya",
     type: "website",
-    canonical: "https://morisenterprises.com/gallery",
+    canonical: "https://morisentreprises.com/gallery",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Gallery", url: "/gallery" },

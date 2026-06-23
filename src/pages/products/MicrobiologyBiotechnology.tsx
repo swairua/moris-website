@@ -194,7 +194,7 @@ const MicrobiologyBiotechnology = () => {
     description: "Comprehensive microbiology supplies including 100+ culture media, agars, broths, and fermentation media. Wagtech microbiological testing kits. High-purity reagents for research and industrial applications.",
     keywords: "culture media, agar, microbiology supplies, laboratory media, fermentation media, microbial culture, biotechnology, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/microbiology-biotechnology",
+    canonical: "https://morisentreprises.com/products/microbiology-biotechnology",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

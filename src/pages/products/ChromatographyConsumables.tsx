@@ -155,7 +155,7 @@ const ChromatographyConsumables = () => {
     description: "Premium chromatography and analytical laboratory consumables including vials, syringe filters, SPE columns, autosampler vials, and sample preparation products for GC, LC, and analytical testing.",
     keywords: "chromatography consumables, vials, syringe filters, SPE column, autosampler vials, laboratory consumables, analytical supplies, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/chromatography-consumables",
+    canonical: "https://morisentreprises.com/products/chromatography-consumables",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

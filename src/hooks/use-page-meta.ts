@@ -131,7 +131,7 @@ export const usePageMeta = ({
           "@type": "ListItem",
           position: index + 1,
           name: item.name,
-          item: `https://morisenterprises.com${item.url}`,
+          item: `https://morisentreprises.com${item.url}`,
         })),
       };
 

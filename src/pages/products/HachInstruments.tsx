@@ -73,7 +73,7 @@ const HachInstruments = () => {
     description: "Authorized distributor of HACH water analysis instruments in Kenya including DR3900 spectrophotometers, COD analyzers, pocket colorimeters, HQ series meters, and water quality testing reagents.",
     keywords: "HACH, HACH instruments, water testing, spectrophotometer, COD analyzer, water quality instruments, DR3900, DR6000, turbidity meter, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/hach-instruments",
+    canonical: "https://morisentreprises.com/products/hach-instruments",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },

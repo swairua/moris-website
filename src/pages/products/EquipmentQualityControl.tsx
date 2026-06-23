@@ -73,7 +73,7 @@ const EquipmentQualityControl = () => {
     description: "Professional quality control equipment including digital thermometers, water quality meters, pH meters, ORP meters, TDS meters, and refractometers for laboratory and industrial testing.",
     keywords: "thermometer, pH meter, ORP meter, TDS meter, water quality equipment, quality control instruments, refractometer, Kenya",
     type: "article",
-    canonical: "https://morisenterprises.com/products/equipment-quality-control",
+    canonical: "https://morisentreprises.com/products/equipment-quality-control",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
