@@ -23,8 +23,8 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { toast } from '@/components/ui/sonner';
-import { Plus, Trash2 } from 'lucide-react';
-import { API_BASE_URL } from '@/lib/utils';
+import { Plus, Trash2, Upload, X } from 'lucide-react';
+import { API_BASE_URL, UPLOAD_URL } from '@/lib/utils';
 
 interface Product {
   id: number;
@@ -33,6 +33,7 @@ interface Product {
   price: number;
   stock: number;
   status: string;
+  image_url: string | null;
   created_at: string;
 }
 
@@ -41,6 +42,7 @@ export function ProductManager() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     category: '',
@@ -48,6 +50,8 @@ export function ProductManager() {
     stock: '',
     description: '',
   });
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   useEffect(() => {
     fetchProducts();
@@ -71,8 +75,59 @@ export function ProductManager() {
     }
   };
 
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('Image must be under 10MB');
+      return;
+    }
+    setImageFile(file);
+    const reader = new FileReader();
+    reader.onload = () => setImagePreview(reader.result as string);
+    reader.readAsDataURL(file);
+  };
+
+  const clearImage = () => {
+    setImageFile(null);
+    setImagePreview(null);
+  };
+
   const handleCreateProduct = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!token) return;
+
+    let image_url: string | null = null;
+
+    if (imageFile) {
+      setUploading(true);
+      const uploadData = new FormData();
+      uploadData.append('file', imageFile);
+      uploadData.append('type', 'products');
+
+      try {
+        const uploadRes = await fetch(UPLOAD_URL, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}` },
+          body: uploadData,
+        });
+
+        if (uploadRes.ok) {
+          const uploadResult = await uploadRes.json();
+          image_url = uploadResult.url;
+        } else {
+          const err = await uploadRes.json();
+          toast.error(err.error || 'Image upload failed');
+          setUploading(false);
+          return;
+        }
+      } catch {
+        toast.error('Failed to upload image');
+        setUploading(false);
+        return;
+      }
+      setUploading(false);
+    }
 
     try {
       const response = await fetch(`${API_BASE_URL}/products`, {
@@ -85,16 +140,21 @@ export function ProductManager() {
           ...formData,
           price: parseFloat(formData.price),
           stock: parseInt(formData.stock),
+          image_url,
         })
       });
 
       if (response.ok) {
         toast.success('Product created successfully');
         setFormData({ name: '', category: '', price: '', stock: '', description: '' });
+        clearImage();
         setShowCreate(false);
         fetchProducts();
+      } else {
+        const err = await response.json();
+        toast.error(err.error || 'Failed to create product');
       }
-    } catch (error) {
+    } catch {
       toast.error('Failed to create product');
     }
   };
@@ -112,7 +172,7 @@ export function ProductManager() {
         toast.success('Product deleted');
         fetchProducts();
       }
-    } catch (error) {
+    } catch {
       toast.error('Failed to delete product');
     }
   };
@@ -124,7 +184,7 @@ export function ProductManager() {
       <Sidebar />
       <div className="md:ml-64">
         <TopBar title="Products" />
-        
+
         <main className="p-6 space-y-6">
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -165,7 +225,7 @@ export function ProductManager() {
                   New Product
                 </Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="max-w-lg">
                 <DialogHeader>
                   <DialogTitle>Add Product</DialogTitle>
                 </DialogHeader>
@@ -207,6 +267,37 @@ export function ProductManager() {
                     </div>
                   </div>
                   <div>
+                    <label className="text-sm font-medium">Product Image</label>
+                    <div className="mt-1 flex items-center gap-4">
+                      <label className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <Upload className="mr-2 h-4 w-4" />
+                        Choose Image
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={handleImageSelect}
+                        />
+                      </label>
+                      {imagePreview && (
+                        <div className="relative">
+                          <img
+                            src={imagePreview}
+                            alt="Preview"
+                            className="h-16 w-16 object-cover rounded border"
+                          />
+                          <button
+                            type="button"
+                            onClick={clearImage}
+                            className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-0.5"
+                          >
+                            <X className="h-3 w-3" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div>
                     <label className="text-sm font-medium">Description</label>
                     <Textarea
                       value={formData.description}
@@ -215,7 +306,9 @@ export function ProductManager() {
                     />
                   </div>
                   <div className="flex gap-2">
-                    <Button type="submit" className="flex-1">Create Product</Button>
+                    <Button type="submit" className="flex-1" disabled={uploading}>
+                      {uploading ? 'Uploading...' : 'Create Product'}
+                    </Button>
                     <Button type="button" variant="outline" onClick={() => setShowCreate(false)}>Cancel</Button>
                   </div>
                 </form>
@@ -238,6 +331,7 @@ export function ProductManager() {
                   <Table>
                     <TableHeader>
                       <TableRow>
+                        <TableHead>Image</TableHead>
                         <TableHead>Name</TableHead>
                         <TableHead>Category</TableHead>
                         <TableHead>Price</TableHead>
@@ -250,6 +344,17 @@ export function ProductManager() {
                     <TableBody>
                       {products.map((product) => (
                         <TableRow key={product.id}>
+                          <TableCell>
+                            {product.image_url ? (
+                              <img
+                                src={product.image_url}
+                                alt={product.name}
+                                className="h-10 w-10 object-cover rounded"
+                              />
+                            ) : (
+                              <div className="h-10 w-10 bg-gray-100 rounded flex items-center justify-center text-gray-400 text-xs">No img</div>
+                            )}
+                          </TableCell>
                           <TableCell className="font-medium">{product.name}</TableCell>
                           <TableCell>{product.category}</TableCell>
                           <TableCell>KES {product.price.toLocaleString()}</TableCell>

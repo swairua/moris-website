@@ -23,11 +23,13 @@ import ChromatographyConsumables from "./pages/products/ChromatographyConsumable
 import EquipmentQualityControl from "./pages/products/EquipmentQualityControl";
 import Filtration from "./pages/products/Filtration";
 import LaboratoryMaterialTesting from "./pages/products/LaboratoryMaterialTesting";
+import HachInstruments from "./pages/products/HachInstruments";
 import ProductDetail from "./pages/products/ProductDetail";
 import Gallery from "./pages/Gallery";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import { LeadsManager } from "@/components/admin/LeadsManager";
+import { MediaManager } from "@/components/admin/MediaManager";
 import { CustomersManager } from "@/components/admin/CustomersManager";
 import { CampaignManager } from "@/components/admin/CampaignManager";
 import { ProductManager } from "@/components/admin/ProductManager";
@@ -66,6 +68,8 @@ const AppRoutes = () => {
         <Route path="/products/automobile-supplies" element={<AutomobileSupplies />} />
         <Route path="/products/automobile-supplies/:productId" element={<ProductDetail />} />
 
+        <Route path="/products/hach-instruments" element={<HachInstruments />} />
+
         <Route path="/gallery" element={<Gallery />} />
 
         {/* Admin Routes */}
@@ -75,6 +79,7 @@ const AppRoutes = () => {
         <Route path="/admin/customers" element={<ProtectedRoute><CustomersManager /></ProtectedRoute>} />
         <Route path="/admin/campaigns" element={<ProtectedRoute><CampaignManager /></ProtectedRoute>} />
         <Route path="/admin/products" element={<ProtectedRoute><ProductManager /></ProtectedRoute>} />
+        <Route path="/admin/media" element={<ProtectedRoute><MediaManager /></ProtectedRoute>} />
         <Route path="/admin/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

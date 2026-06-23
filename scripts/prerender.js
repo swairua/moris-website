@@ -97,6 +97,12 @@ const categoryRouteMap = {
     description: "Professional quality control equipment including digital thermometers, water quality meters, pH meters, ORP meters, and refractometers.",
     keywords: "thermometer, pH meter, ORP meter, TDS meter, water quality equipment, quality control instruments, Kenya",
   },
+  "hach-instruments": {
+    path: "/products/hach-instruments",
+    title: "HACH Water Testing Instruments & Spectrophotometers | Authorized Distributor Kenya",
+    description: "Authorized distributor of HACH water analysis instruments in Kenya including DR3900 spectrophotometers, COD analyzers, pocket colorimeters, HQ series meters, and water quality testing reagents.",
+    keywords: "HACH, HACH instruments, water testing, spectrophotometer, COD analyzer, water quality instruments, DR3900, DR6000, turbidity meter, Kenya",
+  },
   "filtration": {
     path: "/products/filtration",
     title: "Filtration Products & Materials | Syringe Filters, Membranes, SPE Columns Kenya",

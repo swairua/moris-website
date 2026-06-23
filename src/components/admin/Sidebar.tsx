@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { BarChart3, Users, UserCheck, Mail, Package, TrendingUp } from 'lucide-react';
+import { BarChart3, Users, UserCheck, Mail, Package, TrendingUp, Image } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
@@ -8,6 +8,7 @@ const navigation = [
   { name: 'Customers', href: '/admin/customers', icon: UserCheck },
   { name: 'Campaigns', href: '/admin/campaigns', icon: Mail },
   { name: 'Products', href: '/admin/products', icon: Package },
+  { name: 'Media', href: '/admin/media', icon: Image },
   { name: 'Analytics', href: '/admin/analytics', icon: TrendingUp },
 ];
 
