@@ -96,8 +96,12 @@ const LaboratoryTesting = () => {
               <div className="relative w-full h-48 overflow-hidden bg-muted">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - Laboratory testing equipment from Moris Enterprises`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}

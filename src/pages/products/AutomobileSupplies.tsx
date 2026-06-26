@@ -62,8 +62,12 @@ const AutomobileSupplies = () => {
       <div className="relative w-full h-48 bg-muted overflow-hidden">
         <img
           src={product.image}
-          alt={product.imageAlt}
+          alt={product.imageAlt || `${product.name} - KOMU coil springs and automotive suspension parts`}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          width={800}
+          height={600}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">

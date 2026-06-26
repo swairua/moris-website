@@ -200,11 +200,11 @@ const MedicalEquipment = () => {
               <div className="relative w-full h-48 overflow-hidden bg-muted">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - Medical equipment from Moris Enterprises Kenya`}
                   loading="lazy"
                   decoding="async"
-                  width={400}
-                  height={300}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover"
                 />
               </div>

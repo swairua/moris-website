@@ -77,8 +77,12 @@ const Glassware = () => {
             <div className="relative w-full h-48 overflow-hidden bg-muted">
               <img
                 src={product.image}
-                alt={product.name}
+                alt={`${product.name} - Laboratory glassware from Moris Enterprises`}
                 className="w-full h-full object-cover"
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="p-6 flex flex-col h-full">

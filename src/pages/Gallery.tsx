@@ -73,6 +73,10 @@ const Gallery = () => {
                     src={image.url}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    width={800}
+                    height={640}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
@@ -117,8 +121,12 @@ const Gallery = () => {
           >
             <img
               src={galleryImages.find((img) => img.id === selectedImage)?.url}
-              alt="Gallery preview"
+              alt={`${galleryImages.find((img) => img.id === selectedImage)?.title} - Moris Enterprises laboratory gallery`}
               className="w-full h-full object-contain"
+              width={1200}
+              height={800}
+              loading="eager"
+              decoding="async"
             />
             <p className="text-white text-center mt-4">
               {galleryImages.find((img) => img.id === selectedImage)?.title}

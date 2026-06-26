@@ -21,6 +21,8 @@ export const Footer = () => {
                 className="h-16 w-16"
                 loading="lazy"
                 decoding="async"
+                width={64}
+                height={64}
               />
               <span className="text-2xl font-display font-bold">Moris Enterprises</span>
             </div>

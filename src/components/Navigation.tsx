@@ -82,6 +82,8 @@ export const Navigation = () => {
               className="h-16 w-16 object-contain"
               loading="eager"
               decoding="async"
+              width={64}
+              height={64}
             />
             <div className="flex flex-col">
               <span className="text-lg font-display font-bold text-foreground leading-tight">
@@ -199,6 +201,8 @@ export const Navigation = () => {
                     src={logo}
                     alt="Moris Enterprises"
                     className="h-10 w-10 object-contain"
+                    width={40}
+                    height={40}
                   />
                   <span className="font-display font-bold text-foreground">Menu</span>
                 </div>

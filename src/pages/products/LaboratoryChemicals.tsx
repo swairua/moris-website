@@ -83,29 +83,45 @@ const LaboratoryChemicals = () => {
           <div className="rounded-lg overflow-hidden shadow-lg h-48">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F3239eaca6122445697efae1f67bac1c1%2F9780a113573e48a891da0c86f3fde2fc?format=webp&width=800"
-              alt="Chemical grades word cloud"
+              alt="Chemical grades word cloud - Laboratory grade chemicals and reagents"
               className="w-full h-full object-cover"
+              width={800}
+              height={600}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg h-48">
             <img
               src="https://cdn.builder.io/o/assets%2F3239eaca6122445697efae1f67bac1c1%2F42ca9aac2f424def8a67c3b90bff0919?alt=media&token=f0b501a7-4b5c-4c7b-a1f4-5cb0f806b4f7&apiKey=3239eaca6122445697efae1f67bac1c1"
-              alt="Laboratory chemical containers"
+              alt="Laboratory chemical containers - High-purity biochemical reagents"
               className="w-full h-full object-cover"
+              width={800}
+              height={600}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg h-48">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F3239eaca6122445697efae1f67bac1c1%2Fc98dd259853340b1ab6e3f3920293686?format=webp&width=800"
-              alt="Colored chemical solutions"
+              alt="Colored chemical solutions - Laboratory reagents and fine chemicals"
               className="w-full h-full object-cover"
+              width={800}
+              height={600}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg h-48 md:col-start-1">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F3239eaca6122445697efae1f67bac1c1%2F0b05b5e730524dc4ae4d35e385b0c2e9?format=webp&width=800"
-              alt="Laboratory equipment and bottles"
+              alt="Laboratory equipment and bottles - Analytical grade chemicals and reagents"
               className="w-full h-full object-cover"
+              width={800}
+              height={600}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

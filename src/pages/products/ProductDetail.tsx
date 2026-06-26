@@ -109,8 +109,12 @@ const ProductDetail = () => {
             <div className="relative w-full h-96 bg-muted rounded-lg overflow-hidden">
               <img
                 src={product.image}
-                alt={product.imageAlt}
+                alt={product.imageAlt || `${product.name} - Product image`}
                 className="w-full h-full object-cover"
+                width={600}
+                height={400}
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>
@@ -307,8 +311,12 @@ const ProductDetail = () => {
                   <div className="relative w-full h-40 bg-muted overflow-hidden">
                     <img
                       src={relatedProduct.image}
-                      alt={relatedProduct.imageAlt}
+                      alt={relatedProduct.imageAlt || `${relatedProduct.name} - Related product`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      width={600}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="p-4 flex flex-col flex-grow">
