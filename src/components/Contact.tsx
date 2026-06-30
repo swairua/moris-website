@@ -29,7 +29,7 @@ export const Contact = () => {
         "@type": "ContactPoint",
         contactType: "Customer Support",
         telephone: getWhatsAppNumber(),
-        email: "info@morisentreprise.com",
+        email: "info@morisentreprises.com",
       },
       address: {
         "@type": "PostalAddress",
@@ -240,7 +240,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-foreground mb-2">Email Us</h3>
-                  <a href="mailto:info@morisentreprise.com" className="text-muted-foreground hover:text-primary transition-colors">info@morisentreprise.com</a>
+                  <a href="mailto:info@morisentreprises.com" className="text-muted-foreground hover:text-primary transition-colors">info@morisentreprises.com</a>
                   <p className="text-muted-foreground">morisoneadmin@gmail.com</p>
                 </div>
               </div>
