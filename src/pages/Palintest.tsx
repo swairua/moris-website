@@ -320,77 +320,166 @@ const Palintest = () => {
           Our partnership with Palintest allows us to offer genuine products with full manufacturer warranty, technical support, and competitive pricing. From the advanced Lumiso series photometers to the extensive range of Palintest tablet tests covering 40+ individual parameters, we have the right solution for every water testing requirement.
         </p>
 
-        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
-          Why Choose Moris Enterprises for Palintest:
-        </h3>
-        <ul className="text-muted-foreground space-y-2">
-          <li>Official authorized distributor of Palintest UK — genuine products guaranteed</li>
-          <li>300+ product SKUs in stock — photometers, tablets, tube tests, microbiological kits, filtration</li>
-          <li>40+ individual test parameters available for comprehensive water analysis</li>
-          <li>COD tube tests from low range (0-150 mg/L) to ultra-high (0-20,000 mg/L)</li>
-          <li>Rapid results in 1-10 minutes for most tablet tests</li>
-          <li>Full technical support, training, and after-sales service</li>
-          <li>Competitive pricing with prompt delivery across Kenya</li>
-          <li>WhatsApp-based quotations for fast response</li>
-        </ul>
-
-        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
-          Applications:
-        </h3>
-        <ul className="text-muted-foreground space-y-2">
-          <li>Drinking water quality assurance and regulatory compliance</li>
-          <li>Wastewater and effluent treatment monitoring</li>
-          <li>Swimming pool and spa water management</li>
-          <li>Industrial process water quality control</li>
-          <li>Environmental and surface water testing</li>
-          <li>Food and beverage industry quality control</li>
-          <li>Pharmaceutical and laboratory research</li>
-          <li>Boiler and cooling water treatment</li>
-        </ul>
-
-        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
-          Complete Palintest Product Categories:
-        </h3>
-        <ul className="text-muted-foreground space-y-2">
-          <li>Lumiso Expert, Pooltest, Ammonia, Chlorine, Chlorine Dioxide, and Ozone photometers</li>
-          <li>Kemio Disinfection and Heavy Metal Analyzers with replacement sensor packs</li>
-          <li>DPD tablet tests for chlorine (free, total, combined, high range, extended range)</li>
-          <li>Tablet tests for pH, alkalinity, hardness, calcium, magnesium, ammonia, nitrate, nitrite</li>
-          <li>Iron (low, mid, high range), manganese, copper, zinc, aluminium, nickel, potassium</li>
-          <li>Fluoride, chloride, sulfate, phosphate, cyanuric acid, urea, ozone, hydrogen peroxide</li>
-          <li>COD tube tests in 8 ranges from 0-150 to 0-20,000 mg/L with mercury options</li>
-          <li>COD standard solutions for quality control (80 to 10,000 mg/L)</li>
-          <li>Wagtech microbiological testing kits — Potatest, Potalab, Potakit, Potatech+</li>
-          <li>Delagua bacteriological field testing kits</li>
-          <li>Portable incubators, conductivity and multi-parameter pocket sensors</li>
-          <li>RO membrane sediment filter cartridges (10 to 40 inches)</li>
-          <li>Autoclave sterilizers (18L and 24L) for laboratory use</li>
-        </ul>
-
-        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
-          Palintest Test Parameters Include:
-        </h3>
-        <ul className="text-muted-foreground space-y-2">
-          <li>Chlorine (Free, Total, Combined) — DPD1, DPD3, DPD4 methods</li>
-          <li>pH (Phenol Red indicator method, range 6.8-8.4)</li>
-          <li>Alkalinity (Total and Composite methods, 0-500 mg/L CaCO3)</li>
-          <li>Hardness (Total and Calcium, 0-500 mg/L CaCO3)</li>
-          <li>Ammonia (0-1.0 mg/L N), Nitrate (0-20 mg/L NO3), Nitrite (0-5 mg/L NO2)</li>
-          <li>Phosphate (0-4 mg/L PO4), Total Nitrogen, Total Phosphorus</li>
-          <li>Iron — Low (0-1), Mid (0-5), High (0-10 mg/L Fe)</li>
-          <li>Manganese — Low (0-0.03) and High (0-5 mg/L Mn)</li>
-          <li>Copper — Total and Free (0-5 mg/L Cu)</li>
-          <li>Aluminium (0-0.5 mg/L), Zinc (0-4 mg/L), Nickel (0-10 mg/L)</li>
-          <li>Fluoride (0-1.5 mg/L), Chloride (0-50,000 mg/L NaCl)</li>
-          <li>COD — 8 ranges from 0-150 to 0-20,000 mg/L O2</li>
-          <li>Bromine (0-10 mg/L Br2), Ozone (0-3 mg/L O3)</li>
-          <li>Hydrogen Peroxide — Low (0-2) and High (0-100 mg/L H2O2)</li>
-          <li>Cyanuric Acid (0-200 mg/L CNA), Potassium (0-12 mg/L K)</li>
-          <li>Magnesium (0-100 mg/L Mg), Sulfate (0-200 mg/L SO4)</li>
-          <li>Urea (0-5 mg/L), Peracetic Acid (Kemio sensors)</li>
-          <li>Coliform bacteria and pathogens (Wagtech microbiological)</li>
-          <li>Turbidity, Conductivity, TDS (sensor-based)</li>
-        </ul>
+        <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          <table className="w-full border-collapse text-sm md:text-base">
+            <thead>
+              <tr className="bg-primary/10 border-b border-primary/20">
+                <th className="text-left font-semibold text-foreground px-4 py-3 w-[180px] md:w-1/5">Category</th>
+                <th className="text-left font-semibold text-foreground px-4 py-3">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="font-semibold text-primary px-4 py-2.5 align-top whitespace-nowrap" rowSpan={8}>Why Choose</td>
+                <td className="text-muted-foreground px-4 py-2.5">Official authorized distributor of Palintest UK — genuine products guaranteed</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">300+ product SKUs in stock — photometers, tablets, tube tests, microbiological kits, filtration</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">40+ individual test parameters available for comprehensive water analysis</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">COD tube tests from low range (0-150 mg/L) to ultra-high (0-20,000 mg/L)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Rapid results in 1-10 minutes for most tablet tests</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Full technical support, training, and after-sales service</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Competitive pricing with prompt delivery across Kenya</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">WhatsApp-based quotations for fast response</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="font-semibold text-primary px-4 py-2.5 align-top whitespace-nowrap" rowSpan={8}>Applications</td>
+                <td className="text-muted-foreground px-4 py-2.5">Drinking water quality assurance and regulatory compliance</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Wastewater and effluent treatment monitoring</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Swimming pool and spa water management</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Industrial process water quality control</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Environmental and surface water testing</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Food and beverage industry quality control</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Pharmaceutical and laboratory research</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Boiler and cooling water treatment</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="font-semibold text-primary px-4 py-2.5 align-top whitespace-nowrap" rowSpan={13}>Product Categories</td>
+                <td className="text-muted-foreground px-4 py-2.5">Lumiso Expert, Pooltest, Ammonia, Chlorine, Chlorine Dioxide, and Ozone photometers</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Kemio Disinfection and Heavy Metal Analyzers with replacement sensor packs</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">DPD tablet tests for chlorine (free, total, combined, high range, extended range)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Tablet tests for pH, alkalinity, hardness, calcium, magnesium, ammonia, nitrate, nitrite</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Iron (low, mid, high range), manganese, copper, zinc, aluminium, nickel, potassium</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Fluoride, chloride, sulfate, phosphate, cyanuric acid, urea, ozone, hydrogen peroxide</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">COD tube tests in 8 ranges from 0-150 to 0-20,000 mg/L with mercury options</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">COD standard solutions for quality control (80 to 10,000 mg/L)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Wagtech microbiological testing kits — Potatest, Potalab, Potakit, Potatech+</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Delagua bacteriological field testing kits</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Portable incubators, conductivity and multi-parameter pocket sensors</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">RO membrane sediment filter cartridges (10 to 40 inches)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Autoclave sterilizers (18L and 24L) for laboratory use</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="font-semibold text-primary px-4 py-2.5 align-top whitespace-nowrap" rowSpan={19}>Test Parameters</td>
+                <td className="text-muted-foreground px-4 py-2.5">Chlorine (Free, Total, Combined) — DPD1, DPD3, DPD4 methods</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">pH (Phenol Red indicator method, range 6.8-8.4)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Alkalinity (Total and Composite methods, 0-500 mg/L CaCO3)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Hardness (Total and Calcium, 0-500 mg/L CaCO3)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Ammonia (0-1.0 mg/L N), Nitrate (0-20 mg/L NO3), Nitrite (0-5 mg/L NO2)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Phosphate (0-4 mg/L PO4), Total Nitrogen, Total Phosphorus</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Iron — Low (0-1), Mid (0-5), High (0-10 mg/L Fe)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Manganese — Low (0-0.03) and High (0-5 mg/L Mn)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Copper — Total and Free (0-5 mg/L Cu)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Aluminium (0-0.5 mg/L), Zinc (0-4 mg/L), Nickel (0-10 mg/L)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Fluoride (0-1.5 mg/L), Chloride (0-50,000 mg/L NaCl)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">COD — 8 ranges from 0-150 to 0-20,000 mg/L O2</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Bromine (0-10 mg/L Br2), Ozone (0-3 mg/L O3)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Hydrogen Peroxide — Low (0-2) and High (0-100 mg/L H2O2)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Cyanuric Acid (0-200 mg/L CNA), Potassium (0-12 mg/L K)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Magnesium (0-100 mg/L Mg), Sulfate (0-200 mg/L SO4)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Urea (0-5 mg/L), Peracetic Acid (Kemio sensors)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Coliform bacteria and pathogens (Wagtech microbiological)</td>
+              </tr>
+              <tr className="border-b border-gray-100 even:bg-secondary/20">
+                <td className="text-muted-foreground px-4 py-2.5">Turbidity, Conductivity, TDS (sensor-based)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
           <h3 className="text-2xl font-display font-bold text-foreground mb-3">
