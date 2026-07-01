@@ -3,9 +3,6 @@
 
 User-agent: *
 Allow: /
-Allow: /products/
-Allow: /gallery
-Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /handlers/
@@ -31,21 +28,17 @@ Disallow: /src/
 Disallow: /public/
 Disallow: /scripts/
 
-# Specific rules for major search engines
+# Specific rules for Googlebot
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# Specific rules for Bingbot
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Respectful crawl-delay for other bots
-User-agent: *
-Crawl-delay: 1
-Request-rate: 30/60
-
-# Block malicious and aggressive bots
+# Block aggressive/malicious bots
 User-agent: MJ12bot
 Disallow: /
 
@@ -56,9 +49,6 @@ User-agent: SemrushBot
 Disallow: /
 
 User-agent: DotBot
-Disallow: /
-
-User-agent: MJ12bot
 Disallow: /
 
 User-agent: Yandex

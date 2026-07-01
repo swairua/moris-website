@@ -176,11 +176,11 @@ const MedicalEquipment = () => {
     description: "Discover premium medical equipment and laboratory instruments including hematology analyzers, nucleic acid extractors, and microwave digestion systems.",
     keywords: "medical equipment, laboratory instruments, hematology analyzer, diagnostic equipment, Kenya",
     type: "article",
-    canonical: "https://morisentreprises.com/products/medical-equipment",
+    canonical: "https://morisentreprises.com/medical-equipment",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Medical Equipment", url: "/products/medical-equipment" },
+      { name: "Medical Equipment", url: "/medical-equipment" },
     ],
   });
 

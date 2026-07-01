@@ -56,11 +56,11 @@ const Glassware = () => {
     description: "Premium borosilicate laboratory glassware including beakers, flasks, pipettes, and test tubes. Heat-resistant, chemically inert glass for reliable lab operations. Free quotations.",
     keywords: "laboratory glassware, borosilicate glass, beakers, flasks, volumetric flasks, pipettes, test tubes, laboratory equipment, Kenya",
     type: "article",
-    canonical: "https://morisentreprises.com/products/glassware",
+    canonical: "https://morisentreprises.com/glassware",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Glassware", url: "/products/glassware" },
+      { name: "Glassware", url: "/glassware" },
     ],
   });
 

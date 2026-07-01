@@ -49,22 +49,22 @@ const AppRoutes = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/products/medical-equipment" element={<MedicalEquipment />} />
-        <Route path="/products/microbiology-biotechnology" element={<MicrobiologyBiotechnology />} />
-        <Route path="/products/glassware" element={<Glassware />} />
-        <Route path="/products/laboratory-chemicals" element={<LaboratoryChemicals />} />
-        <Route path="/products/chromatography-consumables" element={<ChromatographyConsumables />} />
-        <Route path="/products/equipment-quality-control" element={<EquipmentQualityControl />} />
-        <Route path="/products/water-analysis" element={<WaterAnalysis />} />
-        <Route path="/products/laboratory-testing" element={<LaboratoryTesting />} />
-        <Route path="/products/safety-products" element={<SafetyProducts />} />
-        <Route path="/products/waste-water-filtration" element={<WasteWaterFiltration />} />
-        <Route path="/products/palintest-kits" element={<PalintestKits />} />
-        <Route path="/products/lab-equipment" element={<LabEquipment />} />
-        <Route path="/products/filtration" element={<Filtration />} />
-        <Route path="/products/laboratory-material-testing" element={<LaboratoryMaterialTesting />} />
-        <Route path="/products/automobile-supplies" element={<AutomobileSupplies />} />
-        <Route path="/products/automobile-supplies/:productId" element={<ProductDetail />} />
+        <Route path="/medical-equipment" element={<MedicalEquipment />} />
+        <Route path="/microbiology-biotechnology" element={<MicrobiologyBiotechnology />} />
+        <Route path="/glassware" element={<Glassware />} />
+        <Route path="/laboratory-chemicals" element={<LaboratoryChemicals />} />
+        <Route path="/chromatography-consumables" element={<ChromatographyConsumables />} />
+        <Route path="/equipment-quality-control" element={<EquipmentQualityControl />} />
+        <Route path="/water-analysis" element={<WaterAnalysis />} />
+        <Route path="/laboratory-testing" element={<LaboratoryTesting />} />
+        <Route path="/safety-products" element={<SafetyProducts />} />
+        <Route path="/waste-water-filtration" element={<WasteWaterFiltration />} />
+        <Route path="/palintest" element={<PalintestKits />} />
+        <Route path="/lab-equipment" element={<LabEquipment />} />
+        <Route path="/filtration" element={<Filtration />} />
+        <Route path="/laboratory-material-testing" element={<LaboratoryMaterialTesting />} />
+        <Route path="/automobile-supplies" element={<AutomobileSupplies />} />
+        <Route path="/automobile-supplies/:productId" element={<ProductDetail />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -75,21 +75,38 @@ const AppRoutes = () => {
         <Route path="/admin/products" element={<ProtectedRoute><ProductManager /></ProtectedRoute>} />
         <Route path="/admin/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
 
-        {/* 301 Redirects for deprecated/alternative URLs */}
-        <Route path="/products/chemicals" element={<Redirect to="/products/laboratory-chemicals" />} />
-        <Route path="/products/equipment" element={<Redirect to="/products/medical-equipment" />} />
-        <Route path="/products/lab-supplies" element={<Redirect to="/products/laboratory-chemicals" />} />
-        <Route path="/products/diagnostic-equipment" element={<Redirect to="/products/medical-equipment" />} />
-        <Route path="/products/biotechnology-equipment" element={<Redirect to="/products/microbiology-biotechnology" />} />
-        <Route path="/products/microbiology" element={<Redirect to="/products/microbiology-biotechnology" />} />
-        <Route path="/products/water-treatment" element={<Redirect to="/products/water-analysis" />} />
-        <Route path="/products/testing-equipment" element={<Redirect to="/products/laboratory-testing" />} />
-        <Route path="/products/safety-equipment" element={<Redirect to="/products/safety-products" />} />
-        <Route path="/products/filtration-systems" element={<Redirect to="/products/waste-water-filtration" />} />
-        <Route path="/products/lab-tools" element={<Redirect to="/products/lab-equipment" />} />
-        <Route path="/products/chemical-reagents" element={<Redirect to="/products/laboratory-chemicals" />} />
-        <Route path="/products/auto-supplies" element={<Redirect to="/products/automobile-supplies" />} />
-        <Route path="/products/automobile" element={<Redirect to="/products/automobile-supplies" />} />
+        {/* 301 Redirects for deprecated URLs */}
+        {/* Legacy /products/* paths to new flattened structure */}
+        <Route path="/products/medical-equipment" element={<Redirect to="/medical-equipment" />} />
+        <Route path="/products/microbiology-biotechnology" element={<Redirect to="/microbiology-biotechnology" />} />
+        <Route path="/products/glassware" element={<Redirect to="/glassware" />} />
+        <Route path="/products/laboratory-chemicals" element={<Redirect to="/laboratory-chemicals" />} />
+        <Route path="/products/chromatography-consumables" element={<Redirect to="/chromatography-consumables" />} />
+        <Route path="/products/equipment-quality-control" element={<Redirect to="/equipment-quality-control" />} />
+        <Route path="/products/water-analysis" element={<Redirect to="/water-analysis" />} />
+        <Route path="/products/laboratory-testing" element={<Redirect to="/laboratory-testing" />} />
+        <Route path="/products/safety-products" element={<Redirect to="/safety-products" />} />
+        <Route path="/products/waste-water-filtration" element={<Redirect to="/waste-water-filtration" />} />
+        <Route path="/products/palintest-kits" element={<Redirect to="/palintest" />} />
+        <Route path="/products/lab-equipment" element={<Redirect to="/lab-equipment" />} />
+        <Route path="/products/filtration" element={<Redirect to="/filtration" />} />
+        <Route path="/products/laboratory-material-testing" element={<Redirect to="/laboratory-material-testing" />} />
+        <Route path="/products/automobile-supplies" element={<Redirect to="/automobile-supplies" />} />
+        {/* Alternative naming redirects */}
+        <Route path="/products/chemicals" element={<Redirect to="/laboratory-chemicals" />} />
+        <Route path="/products/equipment" element={<Redirect to="/medical-equipment" />} />
+        <Route path="/products/lab-supplies" element={<Redirect to="/laboratory-chemicals" />} />
+        <Route path="/products/diagnostic-equipment" element={<Redirect to="/medical-equipment" />} />
+        <Route path="/products/biotechnology-equipment" element={<Redirect to="/microbiology-biotechnology" />} />
+        <Route path="/products/microbiology" element={<Redirect to="/microbiology-biotechnology" />} />
+        <Route path="/products/water-treatment" element={<Redirect to="/water-analysis" />} />
+        <Route path="/products/testing-equipment" element={<Redirect to="/laboratory-testing" />} />
+        <Route path="/products/safety-equipment" element={<Redirect to="/safety-products" />} />
+        <Route path="/products/filtration-systems" element={<Redirect to="/waste-water-filtration" />} />
+        <Route path="/products/lab-tools" element={<Redirect to="/lab-equipment" />} />
+        <Route path="/products/chemical-reagents" element={<Redirect to="/laboratory-chemicals" />} />
+        <Route path="/products/auto-supplies" element={<Redirect to="/automobile-supplies" />} />
+        <Route path="/products/automobile" element={<Redirect to="/automobile-supplies" />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

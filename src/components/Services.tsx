@@ -20,79 +20,79 @@ const services = [
     icon: TestTube,
     title: "Microbiology and Biotechnology",
     description: "Prepared Media, Ready Prepared Plates, dehydrated culture media, biological media bases, media supplements, sterile dehydrated culture media.",
-    route: "/products/microbiology-biotechnology"
+    route: "/microbiology-biotechnology"
   },
   {
     icon: Beaker,
     title: "Laboratory and Industrial Chemicals",
     description: "Biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, stains-indicators, Bio Chemicals, Ion pair reagents, speciality chemicals.",
-    route: "/products/laboratory-chemicals"
+    route: "/laboratory-chemicals"
   },
   {
     icon: Microscope,
     title: "Laboratory Equipment",
     description: "Atomic absorption spectrophotometer, flame photometer, UV-Vis spectrophotometer, photo colorimeter, melting point apparatus.",
-    route: "/products/lab-equipment"
+    route: "/lab-equipment"
   },
   {
     icon: Scale,
     title: "Electrical Balances & Scales",
     description: "High-performance with up to 0.01mg readability and capacities up to 220g. AutoCal™ Internal Calibration system ensures accuracy.",
-    route: "/products/laboratory-testing"
+    route: "/laboratory-testing"
   },
   {
     icon: Droplet,
     title: "Water Testing Equipment",
     description: "Water testing kits, reagents, water waste and boiler reagents. Master Distributor of Milwaukee, Lovibond, Delagua, Hach, Palintest, Hanna Equipment.",
-    route: "/products/water-analysis"
+    route: "/water-analysis"
   },
   {
     icon: FlaskConical,
     title: "Material Testing",
     description: "Beverage, Packaging and quality testing equipment for comprehensive material analysis and quality control.",
-    route: "/products/laboratory-testing"
+    route: "/laboratory-testing"
   },
   {
     icon: Shield,
     title: "Personal Protection Equipment",
     description: "Complete PPE solutions under one roof. ISO certified products manufactured using innovative designs with latest technology.",
-    route: "/products/safety-products"
+    route: "/safety-products"
   },
   {
     icon: Boxes,
     title: "Glassware",
     description: "Borosilicate glass with low coefficient of expansion, for heat resistance, and high resistance to chemical attack.",
-    route: "/products/glassware"
+    route: "/glassware"
   },
   {
     icon: GlassWater,
     title: "Water Science",
     description: "Water Filter Cartridges, Filtration Systems, Deionized Water & Systems, Laboratory Water Filters, UV Sterilizers, Water Quality Meters.",
-    route: "/products/waste-water-filtration"
+    route: "/waste-water-filtration"
   },
   {
     icon: Waves,
     title: "Waste Water & Pool Filtration",
     description: "Water testing equipment and reagents offering analysis solutions for all types of water systems and industries.",
-    route: "/products/waste-water-filtration"
+    route: "/waste-water-filtration"
   },
   {
     icon: FlaskConical,
     title: "Quality Control Equipment",
     description: "Clean benches, balances, moisture analyzers, spectrophotometers and stability chambers for QA/QC studies.",
-    route: "/products/laboratory-testing"
+    route: "/laboratory-testing"
   },
   {
     icon: Filter,
     title: "Filtration Equipment",
     description: "Glass microfiber lab filters with fine capillary structure for absorbing significantly larger quantities of water.",
-    route: "/products/waste-water-filtration"
+    route: "/waste-water-filtration"
   },
   {
     icon: HeartPulse,
     title: "Medical Equipment",
     description: "Pipette Tips, Hematology Analyzer, Nucleic Acid Extractor, Microwave Digestion System, BOD Refrigerated Incubator.",
-    route: "/products/medical-equipment"
+    route: "/medical-equipment"
   }
 ];
 

@@ -63,11 +63,11 @@ const Filtration = () => {
     description: "Complete filtration solutions including syringe filters, membrane filters, filter papers, vacuum filtration systems, and sample preparation products for analytical and laboratory applications.",
     keywords: "filtration, syringe filters, membrane filters, filter papers, vacuum filtration, SPE columns, sample preparation, Kenya",
     type: "article",
-    canonical: "https://morisentreprises.com/products/filtration",
+    canonical: "https://morisentreprises.com/filtration",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Filtration", url: "/products/filtration" },
+      { name: "Filtration", url: "/filtration" },
     ],
   });
 

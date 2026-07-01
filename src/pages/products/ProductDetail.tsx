@@ -26,12 +26,12 @@ const ProductDetail = () => {
     keywords: product?.keywords || "",
     image: product?.image || "",
     type: "product",
-    canonical: product ? `https://morisentreprises.com/products/automobile-supplies/${product.id}` : "https://morisentreprises.com",
+    canonical: product ? `https://morisentreprises.com/automobile-supplies/${product.id}` : "https://morisentreprises.com",
     breadcrumbs: product ? [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Automobile Supplies", url: "/products/automobile-supplies" },
-      { name: product.name, url: `/products/automobile-supplies/${product.id}` },
+      { name: "Automobile Supplies", url: "/automobile-supplies" },
+      { name: product.name, url: `/automobile-supplies/${product.id}` },
     ] : [],
   });
 
@@ -95,13 +95,13 @@ const ProductDetail = () => {
       <div className="max-w-6xl mx-auto">
         {/* Breadcrumb Navigation */}
         <Breadcrumb
-          items={[
-            { name: "Home", url: "/" },
-            { name: "Products", url: "/#services" },
-            { name: "Automobile Supplies", url: "/products/automobile-supplies" },
-            { name: product.name, url: `/products/automobile-supplies/${product.id}` },
-          ]}
-        />
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/#services" },
+          { name: "Automobile Supplies", url: "/automobile-supplies" },
+          { name: product.name, url: `/automobile-supplies/${product.id}` },
+        ]}
+      />
 
         {/* Product Main Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -244,7 +244,7 @@ const ProductDetail = () => {
               <p className="text-muted-foreground leading-relaxed mt-6">
                 For optimal suspension performance, consider pairing your coil springs with our{" "}
                 <button
-                  onClick={() => navigate("/products/automobile-supplies")}
+                  onClick={() => navigate("/automobile-supplies")}
                   className="text-primary hover:underline font-semibold"
                 >
                   professional-grade shock absorbers
@@ -285,7 +285,7 @@ const ProductDetail = () => {
               <p className="text-muted-foreground leading-relaxed mt-6">
                 For complete suspension system upgrades, pair these shock absorbers with our full range of{" "}
                 <button
-                  onClick={() => navigate("/products/automobile-supplies")}
+                  onClick={() => navigate("/automobile-supplies")}
                   className="text-primary hover:underline font-semibold"
                 >
                   KOMU coil springs

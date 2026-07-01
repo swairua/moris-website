@@ -39,23 +39,23 @@ export const Navigation = () => {
   };
 
   const productCategories = [
-    { name: "Medical Equipment", path: "/products/medical-equipment", icon: HeartPulse },
-    { name: "Microbiology and Biotechnology", path: "/products/microbiology-biotechnology", icon: Microscope },
-    { name: "Glassware", path: "/products/glassware", icon: Beaker },
-    { name: "Laboratory Chemicals and Reagents", path: "/products/laboratory-chemicals", icon: FlaskConical },
-    { name: "Water Analysis Instruments and Water Treatment", path: "/products/water-analysis", icon: Droplet },
-    { name: "Laboratory and Material Testing", path: "/products/laboratory-testing", icon: TestTube },
-    { name: "Safety Products", path: "/products/safety-products", icon: Shield },
-    { name: "Waste Water, Pool and Spa Filtration", path: "/products/waste-water-filtration", icon: Waves },
-    { name: "Palintest Kits", path: "/products/palintest-kits", icon: Pipette },
-    { name: "Lab Equipment", path: "/products/lab-equipment", icon: Settings },
+    { name: "Medical Equipment", path: "/medical-equipment", icon: HeartPulse },
+    { name: "Microbiology and Biotechnology", path: "/microbiology-biotechnology", icon: Microscope },
+    { name: "Glassware", path: "/glassware", icon: Beaker },
+    { name: "Laboratory Chemicals and Reagents", path: "/laboratory-chemicals", icon: FlaskConical },
+    { name: "Water Analysis Instruments and Water Treatment", path: "/water-analysis", icon: Droplet },
+    { name: "Laboratory and Material Testing", path: "/laboratory-testing", icon: TestTube },
+    { name: "Safety Products", path: "/safety-products", icon: Shield },
+    { name: "Waste Water, Pool and Spa Filtration", path: "/waste-water-filtration", icon: Waves },
+    { name: "Palintest Kits", path: "/palintest", icon: Pipette },
+    { name: "Lab Equipment", path: "/lab-equipment", icon: Settings },
   ];
 
   const navItems = [
     { label: "Home", action: () => scrollToSection("home") },
     { label: "About", action: () => scrollToSection("about") },
     { label: "Services", action: () => scrollToSection("services") },
-    { label: "Automobile Supplies", action: () => navigate("/products/automobile-supplies") },
+    { label: "Automobile Supplies", action: () => navigate("/automobile-supplies") },
     { label: "Contact", action: () => scrollToSection("contact") },
   ];
 
@@ -151,7 +151,7 @@ export const Navigation = () => {
             <button
               onClick={() => {
                 trackEvent('product_category_clicked', { category: 'Automobile Supplies' });
-                navigate("/products/automobile-supplies");
+                navigate("/automobile-supplies");
               }}
               className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all duration-200 relative group"
             >

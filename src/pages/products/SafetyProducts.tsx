@@ -71,11 +71,11 @@ const SafetyProducts = () => {
     description: "ISO certified personal protection equipment and safety products manufactured with innovative designs and latest technology. Complete PPE solutions for laboratories and industries.",
     keywords: "PPE, personal protective equipment, safety products, protective gear, ISO certified, laboratory safety, Kenya",
     type: "article",
-    canonical: "https://morisentreprises.com/products/safety-products",
+    canonical: "https://morisentreprises.com/safety-products",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Safety Products", url: "/products/safety-products" },
+      { name: "Safety Products", url: "/safety-products" },
     ],
   });
 

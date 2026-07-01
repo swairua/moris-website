@@ -56,32 +56,36 @@ const products = [
 
 const PalintestKits = () => {
   usePageMeta({
-    title: "Palintest Water Testing Kits & Photometers | Water Quality Analysis Kenya",
-    description: "Official distributor of Palintest water testing kits and photometers for rapid water quality analysis. Professional-grade testing solutions for water treatment and monitoring in Kenya.",
-    keywords: "Palintest, water testing kits, photometers, water quality, water analysis, testing equipment, Kenya",
-    type: "article",
-    canonical: "https://morisentreprises.com/products/palintest-kits",
+    title: "Palintest Authorized Distributor Kenya | Water Testing Kits & Photometers",
+    description: "Moris Enterprises is Kenya's leading authorized Palintest distributor. Premium water testing kits, photometers, and reagents for accurate water quality analysis in pools, spas, drinking water, and industrial applications.",
+    keywords: "Palintest Kenya, Palintest distributor, water testing kits, photometers, water quality analysis, drinking water testing, pool testing, environmental water testing",
+    type: "product",
+    canonical: "https://morisentreprises.com/palintest",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Palintest Kits", url: "/products/palintest-kits" },
+      { name: "Palintest Kits", url: "/palintest" },
     ],
     faqs: [
       {
+        question: "Is Moris Enterprises an authorized Palintest distributor?",
+        answer: "Yes, Moris Enterprises is an official authorized distributor of Palintest products in Kenya. We guarantee authentic products with full manufacturer support and warranty."
+      },
+      {
         question: "What Palintest products are available?",
-        answer: "We offer a complete range of Palintest water testing products including photometers, test kits for pools and spas, drinking water analysis equipment, environmental water testing kits, and complete testing systems."
+        answer: "We stock the complete Palintest range including Photometers, Kemio Analyzers, Pooltest systems, drinking water testing kits, wastewater analysis equipment, and test tablets and reagents."
       },
       {
-        question: "Are these authentic Palintest products?",
-        answer: "Yes, Moris Enterprises is an official authorized distributor of Palintest products, ensuring all products are genuine and come with full manufacturer warranty and support."
+        question: "Which industries use Palintest products?",
+        answer: "Palintest solutions are used by municipal water treatment facilities, swimming pool operators, spa facilities, environmental consultants, food and beverage industry, pharmaceutical companies, and water quality laboratories across Kenya."
       },
       {
-        question: "What applications are Palintest kits suitable for?",
-        answer: "Palintest products are suitable for pool and spa testing, drinking water quality analysis, wastewater treatment monitoring, industrial water testing, and environmental water quality assessment."
+        question: "Can I get technical support and training?",
+        answer: "Yes, we provide technical support, product training, and consultation services. Our team can help select the right testing solution for your specific needs. Contact us for details."
       },
       {
-        question: "How quickly can you deliver?",
-        answer: "We provide fast delivery throughout Kenya. Contact us via WhatsApp at +254 733 137 332 for current stock availability and delivery timelines."
+        question: "How quickly can you deliver Palintest products?",
+        answer: "We provide fast delivery throughout Kenya. Contact us via WhatsApp at +254 733 137 332 to check stock availability and get delivery quotes."
       }
     ]
   });
@@ -130,14 +134,69 @@ const PalintestKits = () => {
       </div>
 
       <div className="mt-12 prose prose-lg max-w-none">
-        <h2 className="text-3xl font-display font-bold text-foreground mb-4">
-          Palintest Water Testing Excellence
+        <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+          Palintest: Premium Water Quality Testing Solutions
         </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 className="text-xl font-semibold text-foreground mb-3">Why Choose Palintest?</h3>
+            <ul className="text-muted-foreground space-y-2">
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">✓</span>
+                <span>Globally trusted brand with 60+ years of water testing expertise</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">✓</span>
+                <span>Rapid testing methods - results in seconds, not hours</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">✓</span>
+                <span>Portable, user-friendly equipment suitable for field and lab use</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">✓</span>
+                <span>Certified accuracy and compliance with international standards</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-foreground mb-3">Our Palintest Services</h3>
+            <ul className="text-muted-foreground space-y-2">
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">•</span>
+                <span>Complete product supply and inventory management</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">•</span>
+                <span>Technical support and equipment troubleshooting</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">•</span>
+                <span>Training and certification for operator qualification</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 font-bold">•</span>
+                <span>Calibration services and maintenance programs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold text-foreground mb-3">Applications We Support</h3>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          As an authorized distributor of Palintest products in Kenya, Moris Enterprises serves diverse sectors
+          requiring reliable water testing. Our solutions are deployed in municipal water treatment, competitive
+          and recreational swimming pools, spa facilities, wastewater treatment plants, environmental monitoring
+          programs, and industrial quality control operations.
+        </p>
+
         <p className="text-muted-foreground leading-relaxed">
-          As an authorized distributor of Palintest products, we offer a complete range of water testing 
-          solutions known for their accuracy and reliability. Palintest's innovative photometers and 
-          test kits are trusted worldwide for pool, spa, drinking water, and environmental water testing, 
-          providing fast and accurate results for critical water quality parameters.
+          Palintest's innovative photometers and rapid test systems provide accurate, repeatable results for critical
+          water quality parameters including disinfectant residuals, pH, alkalinity, turbidity, and over 100 other
+          parameters. Whether you need portable field kits or stationary laboratory analyzers, our Palintest range
+          combines ease-of-use with laboratory-grade accuracy.
         </p>
       </div>
     </ProductPageLayout>

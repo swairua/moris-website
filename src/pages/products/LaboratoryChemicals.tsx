@@ -62,11 +62,11 @@ const LaboratoryChemicals = () => {
     description: "High-purity laboratory chemicals including biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, stains, and HPLC-grade acids. Premium quality reagents for research and industrial applications.",
     keywords: "laboratory chemicals, reagents, biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, HPLC acids, analytical grade, Kenya, supplier",
     type: "article",
-    canonical: "https://morisentreprises.com/products/laboratory-chemicals",
+    canonical: "https://morisentreprises.com/laboratory-chemicals",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Laboratory Chemicals", url: "/products/laboratory-chemicals" },
+      { name: "Laboratory Chemicals", url: "/laboratory-chemicals" },
     ],
   });
 

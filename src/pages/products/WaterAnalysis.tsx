@@ -137,11 +137,11 @@ const WaterAnalysis = () => {
     description: "Official distributor of Palintest water analysis equipment, HACH instruments, and comprehensive water testing solutions including photometers, reagents, meters, and microbiological kits.",
     keywords: "water testing, Palintest, HACH, water quality equipment, water analysis, photometer, COD analyzer, turbidity meter, Kenya",
     type: "article",
-    canonical: "https://morisentreprises.com/products/water-analysis",
+    canonical: "https://morisentreprises.com/water-analysis",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Water Analysis", url: "/products/water-analysis" },
+      { name: "Water Analysis", url: "/water-analysis" },
     ],
     faqs: [
       {
