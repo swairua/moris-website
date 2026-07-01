@@ -2,8 +2,10 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useEffect } from "react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
+import { injectAggregateOfferSchema } from "@/lib/seo";
 
 const productCategories = {
   "Palintest Photometers": [
@@ -132,6 +134,17 @@ const productCategories = {
 
 
 const WaterAnalysis = () => {
+  useEffect(() => {
+    injectAggregateOfferSchema(
+      "Water Testing Equipment & Analysis Solutions",
+      "Comprehensive water testing equipment including Palintest, HACH, and professional water quality analysis instruments.",
+      "KES",
+      "3000",
+      "1000000",
+      100
+    );
+  }, []);
+
   usePageMeta({
     title: "Water Testing Equipment & Palintest | Water Quality Analysis Kenya",
     description: "Official distributor of Palintest water analysis equipment, HACH instruments, and comprehensive water testing solutions including photometers, reagents, meters, and microbiological kits.",

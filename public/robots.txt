@@ -1,8 +1,28 @@
 # Robots.txt for Moris Enterprises
 # Allow search engines to crawl public pages
+# Last Updated: 2024
 
+# Default rules for all bots
 User-agent: *
 Allow: /
+Allow: /medical-equipment
+Allow: /microbiology-biotechnology
+Allow: /glassware
+Allow: /laboratory-chemicals
+Allow: /chromatography-consumables
+Allow: /equipment-quality-control
+Allow: /water-analysis
+Allow: /laboratory-testing
+Allow: /safety-products
+Allow: /waste-water-filtration
+Allow: /palintest
+Allow: /lab-equipment
+Allow: /filtration
+Allow: /laboratory-material-testing
+Allow: /automobile-supplies
+Allow: /gallery
+
+# Disallow sensitive paths
 Disallow: /admin/
 Disallow: /api/
 Disallow: /handlers/
@@ -25,18 +45,21 @@ Disallow: /*.php$
 Disallow: /node_modules/
 Disallow: /dist/
 Disallow: /src/
-Disallow: /public/
 Disallow: /scripts/
 
-# Specific rules for Googlebot
+# Legacy redirect paths (allow for crawling before redirects)
+Allow: /products/
+
+# Specific crawler rules
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
+Request-rate: 100/1h
 
-# Specific rules for Bingbot
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+Request-rate: 30/1h
 
 # Block aggressive/malicious bots
 User-agent: MJ12bot
@@ -51,6 +74,7 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
+# Allow legitimate bots
 User-agent: Yandex
 Allow: /
 

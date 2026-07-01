@@ -2,8 +2,10 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useEffect } from "react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
+import { injectAggregateOfferSchema } from "@/lib/seo";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
 const products = [
@@ -55,16 +57,27 @@ const products = [
 
 
 const PalintestKits = () => {
+  useEffect(() => {
+    injectAggregateOfferSchema(
+      "Palintest Water Testing Solutions",
+      "Official Palintest distributor offering comprehensive water testing kits, photometers, and analyzers for professional water quality analysis.",
+      "KES",
+      "5000",
+      "500000",
+      50
+    );
+  }, []);
+
   usePageMeta({
-    title: "Palintest Authorized Distributor Kenya | Water Testing Kits & Photometers",
-    description: "Moris Enterprises is Kenya's leading authorized Palintest distributor. Premium water testing kits, photometers, and reagents for accurate water quality analysis in pools, spas, drinking water, and industrial applications.",
-    keywords: "Palintest Kenya, Palintest distributor, water testing kits, photometers, water quality analysis, drinking water testing, pool testing, environmental water testing",
+    title: "Palintest Water Testing | Official Kenya Distributor | Premium Water Analysis",
+    description: "Official Palintest distributor in Kenya. Premium water testing kits, photometers, and analyzers for drinking water, pools, spas, and environmental testing. Expert technical support and training.",
+    keywords: "Palintest, Palintest Kenya, water testing kits, photometers, Pooltest, Kemio analyzer, water quality analysis, water testing equipment, Kenya distributor",
     type: "product",
     canonical: "https://morisentreprises.com/palintest",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Palintest Kits", url: "/palintest" },
+      { name: "Palintest", url: "/palintest" },
     ],
     faqs: [
       {

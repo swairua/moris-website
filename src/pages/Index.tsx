@@ -6,8 +6,27 @@ import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Inject ContactPoint schema for customer support visibility
+    const contactPointSchema = {
+      "@context": "https://schema.org",
+      "@type": "ContactPoint",
+      contactType: "Customer Support",
+      telephone: "+254-733-137-332",
+      email: "info@morisenterprises.com",
+      areaServed: "KE",
+      availableLanguage: ["en"]
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(contactPointSchema);
+    document.head.appendChild(script);
+  }, []);
+
   usePageMeta({
     title: "Moris Enterprises | Laboratory Chemicals, Equipment & Medical Supplies Kenya | Palintest Partner",
     description: "Premier supplier of laboratory chemicals, medical equipment, biotechnology supplies & diagnostic instruments in Kenya. Official Palintest distributor for water testing solutions, photometers, and test kits. Microbiology media, chromatography consumables, water testing equipment, quality control instruments. Get quotes via WhatsApp. Fast delivery.",

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, ChevronLeft, ChevronRight, Droplet } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAnalytics } from "@/hooks/use-analytics";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
@@ -21,6 +22,7 @@ const sliderImages = [
 
 export const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate();
   const { trackEvent } = useAnalytics();
 
   useEffect(() => {
@@ -138,13 +140,13 @@ export const Hero = () => {
             <Button
               size="lg"
               onClick={() => {
-                trackEvent('hero_cta_clicked', { button: 'contact_us' });
-                scrollToSection("contact");
+                trackEvent('hero_cta_clicked', { button: 'palintest' });
+                navigate("/palintest");
               }}
-              className="bg-white/20 border-2 border-primary-foreground text-primary-foreground hover:bg-white/30 text-lg px-8 py-6 backdrop-blur-sm"
+              className="bg-emerald-500 text-white hover:bg-emerald-600 text-lg px-8 py-6 font-semibold shadow-lg"
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Contact Us
+              <Droplet className="mr-2 h-5 w-5" />
+              Explore Palintest
             </Button>
           </div>
 

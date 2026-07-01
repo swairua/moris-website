@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import {
   Microscope,
@@ -12,7 +13,8 @@ import {
   Waves,
   Filter,
   HeartPulse,
-  GlassWater
+  GlassWater,
+  ArrowRight
 } from "lucide-react";
 
 const services = [
@@ -110,6 +112,47 @@ export const Services = () => {
             We help you with all the solutions you may require for the industry with prompt service at any point in time. Customer centricity is our motto.
           </p>
         </div>
+
+        {/* Featured Palintest Section */}
+        <div className="mb-12">
+          <Card
+            onClick={() => navigate("/palintest")}
+            className="p-8 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative"
+          >
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center">
+                <Droplet className="h-8 w-8 text-white" aria-hidden="true" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="inline-block bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    FEATURED
+                  </span>
+                  <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
+                    Official Distributor
+                  </span>
+                </div>
+                <h3 className="text-2xl font-display font-bold text-emerald-900 mb-2">
+                  Palintest Water Testing Solutions
+                </h3>
+                <p className="text-emerald-800 leading-relaxed mb-4">
+                  Premium water testing kits, professional photometers, and advanced analyzers for drinking water, pools, spas, and environmental testing. Complete solutions from Kenya's official Palintest distributor with expert technical support.
+                </p>
+                <Button
+                  onClick={() => navigate("/palintest")}
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
+                >
+                  Explore Palintest
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mb-8">
+          Other Products &amp; Services
+        </h3>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
           {services.map((service, index) => {

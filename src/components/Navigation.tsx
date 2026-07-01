@@ -39,6 +39,7 @@ export const Navigation = () => {
   };
 
   const productCategories = [
+    { name: "Palintest Water Testing", path: "/palintest", icon: Droplet, featured: true },
     { name: "Medical Equipment", path: "/medical-equipment", icon: HeartPulse },
     { name: "Microbiology and Biotechnology", path: "/microbiology-biotechnology", icon: Microscope },
     { name: "Glassware", path: "/glassware", icon: Beaker },
@@ -47,7 +48,6 @@ export const Navigation = () => {
     { name: "Laboratory and Material Testing", path: "/laboratory-testing", icon: TestTube },
     { name: "Safety Products", path: "/safety-products", icon: Shield },
     { name: "Waste Water, Pool and Spa Filtration", path: "/waste-water-filtration", icon: Waves },
-    { name: "Palintest Kits", path: "/palintest", icon: Pipette },
     { name: "Lab Equipment", path: "/lab-equipment", icon: Settings },
   ];
 
@@ -120,29 +120,61 @@ export const Navigation = () => {
                   <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isProductsDropdownOpen ? 'rotate-180' : ''}`} />
                   <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-screen max-w-3xl bg-white border border-gray-100 rounded-xl shadow-lg p-8 mt-2">
-                  <div className="grid grid-cols-3 gap-6">
-                    {productCategories.map((category) => {
+                <DropdownMenuContent className="w-screen max-w-4xl bg-white border border-gray-100 rounded-xl shadow-lg p-8 mt-2">
+                  <div>
+                    {/* Featured Palintest Section */}
+                    {productCategories.filter(c => c.featured).map((category) => {
                       const IconComponent = category.icon;
                       return (
-                        <button
-                          key={category.path}
-                          onClick={() => {
-                            trackEvent('product_category_clicked', { category: category.name });
-                            navigate(category.path);
-                            setIsProductsDropdownOpen(false);
-                          }}
-                          className="flex flex-col items-center gap-3 p-5 rounded-xl hover:bg-primary/5 transition-all duration-200 group cursor-pointer text-center hover:shadow-md"
-                        >
-                          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-200">
-                            <IconComponent className="h-7 w-7 text-primary" />
-                          </div>
-                          <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                            {category.name}
-                          </span>
-                        </button>
+                        <div key={`featured-${category.path}`} className="mb-6 pb-6 border-b border-gray-200">
+                          <p className="text-xs font-bold text-primary uppercase tracking-wide mb-3">Featured</p>
+                          <button
+                            onClick={() => {
+                              trackEvent('product_category_clicked', { category: category.name, placement: 'featured' });
+                              navigate(category.path);
+                              setIsProductsDropdownOpen(false);
+                            }}
+                            className="w-full flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 border-2 border-emerald-200 transition-all duration-200 group cursor-pointer text-left hover:shadow-md"
+                          >
+                            <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 group-hover:from-emerald-500 group-hover:to-teal-600 transition-all duration-200 flex-shrink-0">
+                              <IconComponent className="h-8 w-8 text-white" />
+                            </div>
+                            <div>
+                              <span className="block text-base font-bold text-emerald-700">
+                                {category.name}
+                              </span>
+                              <span className="block text-sm text-emerald-600 mt-1">Official Distributor - Water Testing Solutions</span>
+                            </div>
+                          </button>
+                        </div>
                       );
                     })}
+
+                    {/* Other Product Categories */}
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-4">Laboratory Products</p>
+                    <div className="grid grid-cols-3 gap-6">
+                      {productCategories.filter(c => !c.featured).map((category) => {
+                        const IconComponent = category.icon;
+                        return (
+                          <button
+                            key={category.path}
+                            onClick={() => {
+                              trackEvent('product_category_clicked', { category: category.name });
+                              navigate(category.path);
+                              setIsProductsDropdownOpen(false);
+                            }}
+                            className="flex flex-col items-center gap-3 p-5 rounded-xl hover:bg-primary/5 transition-all duration-200 group cursor-pointer text-center hover:shadow-md"
+                          >
+                            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-200">
+                              <IconComponent className="h-7 w-7 text-primary" />
+                            </div>
+                            <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                              {category.name}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>
