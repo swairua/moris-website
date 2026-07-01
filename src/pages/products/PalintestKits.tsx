@@ -83,9 +83,16 @@ const PalintestKits = () => {
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
+      { name: "Water Testing", url: "/#services" },
       { name: "Palintest", url: "/palintest" },
     ],
     author: "Moris Entreprises",
+    brand: "Palintest",
+    category: "Water Testing Equipment",
+    sellerInfo: {
+      name: "Moris Entreprises",
+      url: "https://morisentreprises.com",
+    },
     faqs: [
       {
         question: "Is Moris Entreprises an authorized Palintest distributor?",

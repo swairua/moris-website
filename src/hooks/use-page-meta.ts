@@ -31,6 +31,13 @@ interface PageMetaProps {
   ogLocale?: string;
   robots?: string;
   services?: ServiceItem[];
+  brand?: string;
+  category?: string;
+  sellerInfo?: {
+    name: string;
+    url: string;
+    address?: string;
+  };
 }
 
 export const usePageMeta = ({
@@ -48,6 +55,9 @@ export const usePageMeta = ({
   ogLocale = "en_KE",
   robots,
   services,
+  brand,
+  category,
+  sellerInfo,
 }: PageMetaProps) => {
   useEffect(() => {
     // Set document title
@@ -173,7 +183,8 @@ export const usePageMeta = ({
 
     // Add article/product metadata schema
     if ((type === "article" || type === "product") && (publishedDate || author || modifiedDate || type === "product")) {
-      const articleSchema = {
+      const baseUrl = canonical || `https://morisentreprises.com${window.location.pathname}`;
+      const articleSchema: Record<string, any> = {
         "@context": "https://schema.org",
         "@type": type === "product" ? "Product" : "Article",
         headline: title,
@@ -183,6 +194,25 @@ export const usePageMeta = ({
         ...(modifiedDate && { dateModified: modifiedDate }),
         ...(author && { author: { "@type": "Organization", name: author } }),
       };
+
+      // Add product-specific fields
+      if (type === "product") {
+        articleSchema.url = baseUrl;
+        if (brand) {
+          articleSchema.brand = { "@type": "Brand", name: brand };
+        }
+        if (category) {
+          articleSchema.category = category;
+        }
+        if (sellerInfo) {
+          articleSchema.seller = {
+            "@type": "Organization",
+            name: sellerInfo.name,
+            url: sellerInfo.url,
+            ...(sellerInfo.address && { address: sellerInfo.address }),
+          };
+        }
+      }
 
       let articleScript = document.querySelector('script[data-article]');
       if (articleScript) {
@@ -259,5 +289,5 @@ export const usePageMeta = ({
       }
     }
 
-  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, faqs, ogLocale, services]);
+  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, faqs, ogLocale, services, brand, category, sellerInfo]);
 };

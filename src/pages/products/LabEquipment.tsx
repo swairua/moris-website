@@ -114,7 +114,7 @@ const LabEquipment = () => {
               <div className="relative w-full h-48 overflow-hidden bg-muted">
                 <OptimizedImage
                   src={product.image}
-                  alt={`${product.name} - Laboratory equipment from Moris Enterprises Kenya`}
+                  alt={`${product.name} - Laboratory equipment from Moris Entreprises Kenya`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   width={800}
                   height={600}

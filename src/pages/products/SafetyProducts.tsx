@@ -100,7 +100,7 @@ const SafetyProducts = () => {
                 <div className="relative w-full h-48 overflow-hidden bg-muted">
                   <OptimizedImage
                     src={productImage}
-                    alt={`${productName} - Safety equipment and PPE from Moris Enterprises`}
+                    alt={`${productName} - Safety equipment and PPE from Moris Entreprises`}
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
