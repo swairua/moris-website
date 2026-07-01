@@ -314,8 +314,28 @@ export const injectImageSchema = (
   document.head.appendChild(script);
 };
 
+interface AggregateOfferSchemaProps {
+  name: string;
+  description: string;
+  priceCurrency?: string;
+  lowPrice?: string;
+  highPrice?: string;
+  offerCount?: number;
+  image?: string;
+  url?: string;
+  brand?: string;
+  seller?: {
+    name: string;
+    url: string;
+    address?: string;
+  };
+  priceValidUntil?: string;
+  category?: string;
+}
+
 /**
  * Add AggregateOffer schema for product listings with multiple offers
+ * Enhanced with image, URL, seller info, and brand for better Google visibility
  */
 export const injectAggregateOfferSchema = (
   name: string,
@@ -323,13 +343,18 @@ export const injectAggregateOfferSchema = (
   priceCurrency: string = "KES",
   lowPrice?: string,
   highPrice?: string,
-  offerCount?: number
+  offerCount?: number,
+  options?: Omit<AggregateOfferSchemaProps, "name" | "description" | "priceCurrency" | "lowPrice" | "highPrice" | "offerCount">
 ): void => {
-  const schema = {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: name,
     description: description,
+    ...(options?.image && { image: options.image }),
+    ...(options?.url && { url: options.url }),
+    ...(options?.brand && { brand: { "@type": "Brand", name: options.brand } }),
+    ...(options?.category && { category: options.category }),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: priceCurrency,
@@ -337,8 +362,37 @@ export const injectAggregateOfferSchema = (
       ...(highPrice && { highPrice: highPrice }),
       ...(offerCount && { offerCount: offerCount }),
       availability: "https://schema.org/InStock",
+      ...(options?.priceValidUntil && { priceValidUntil: options.priceValidUntil }),
+      ...(options?.seller && {
+        seller: {
+          "@type": "Organization",
+          name: options.seller.name,
+          url: options.seller.url,
+          ...(options.seller.address && {
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: options.seller.address,
+            },
+          }),
+        },
+      }),
     },
   };
+
+  // Add seller at product level if provided (for richer schema)
+  if (options?.seller) {
+    schema.seller = {
+      "@type": "Organization",
+      name: options.seller.name,
+      url: options.seller.url,
+      ...(options.seller.address && {
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: options.seller.address,
+        },
+      }),
+    };
+  }
 
   const script = document.createElement("script");
   script.type = "application/ld+json";
