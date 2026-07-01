@@ -2,11 +2,13 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
 import { injectAggregateOfferSchema } from "@/lib/seo";
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { Table, TableBody, TableHead, TableHeader, TableRow, TableCell } from "@/components/ui/table";
+import { productsByCategory } from "@/data/palintestProducts";
 
 const products = [
   {
@@ -57,6 +59,20 @@ const products = [
 
 
 const PalintestKits = () => {
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>(
+    productsByCategory.reduce((acc, cat) => {
+      acc[cat.category] = true;
+      return acc;
+    }, {} as Record<string, boolean>)
+  );
+
+  const toggleCategory = (category: string) => {
+    setExpandedCategories((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
+
   useEffect(() => {
     injectAggregateOfferSchema(
       "Palintest Water Testing Solutions",
@@ -212,6 +228,78 @@ const PalintestKits = () => {
           parameters. Whether you need portable field kits or stationary laboratory analyzers, our Palintest range
           combines ease-of-use with laboratory-grade accuracy.
         </p>
+      </div>
+
+      <div className="mt-16 pt-8 border-t border-muted">
+        <h2 className="text-3xl font-display font-bold text-foreground mb-2">
+          Complete Palintest Product Catalog
+        </h2>
+        <p className="text-muted-foreground mb-8">
+          Browse our complete inventory of {productsByCategory.reduce((sum, cat) => sum + cat.products.length, 0)} Palintest products organized by category.
+        </p>
+
+        <div className="space-y-8">
+          {productsByCategory.map((categoryData) => (
+            <div key={categoryData.category} className="space-y-3">
+              <button
+                onClick={() => toggleCategory(categoryData.category)}
+                className="flex items-center gap-2 w-full text-left p-4 bg-muted/50 hover:bg-muted transition-colors rounded-lg"
+              >
+                <span className="text-lg font-semibold text-foreground">
+                  {categoryData.category}
+                </span>
+                <span className="text-sm text-muted-foreground ml-auto">
+                  ({categoryData.products.length} products)
+                </span>
+                <span className="text-muted-foreground">
+                  {expandedCategories[categoryData.category] ? "▼" : "▶"}
+                </span>
+              </button>
+
+              {expandedCategories[categoryData.category] && (
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-32 font-semibold">Product Code</TableHead>
+                        <TableHead className="font-semibold">Product Name</TableHead>
+                        <TableHead className="font-semibold">Specification</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {categoryData.products.map((product, idx) => (
+                        <TableRow key={idx}>
+                          <TableCell className="font-mono text-sm font-medium text-primary">
+                            {product.code}
+                          </TableCell>
+                          <TableCell>{product.name}</TableCell>
+                          <TableCell className="text-muted-foreground">
+                            {product.specification}
+                            {product.testCount && ` - ${product.testCount}`}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 p-6 bg-emerald-50/50 border border-emerald-200 rounded-lg">
+          <h3 className="text-lg font-semibold text-emerald-900 mb-2">Need a specific product?</h3>
+          <p className="text-emerald-800 mb-4">
+            Our team can help you find the right Palintest solution for your water testing needs. Contact us for availability and pricing.
+          </p>
+          <Button
+            onClick={() => openProductQuotation("Palintest Products")}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium"
+          >
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Request Product Information
+          </Button>
+        </div>
       </div>
     </ProductPageLayout>
   );

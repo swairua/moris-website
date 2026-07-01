@@ -130,16 +130,6 @@ export const Hero = () => {
             <Button
               size="lg"
               onClick={() => {
-                trackEvent('hero_cta_clicked', { button: 'explore_services' });
-                scrollToSection("services");
-              }}
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-6"
-            >
-              Explore Our Services
-            </Button>
-            <Button
-              size="lg"
-              onClick={() => {
                 trackEvent('hero_cta_clicked', { button: 'palintest' });
                 navigate("/palintest");
               }}
@@ -147,6 +137,16 @@ export const Hero = () => {
             >
               <Droplet className="mr-2 h-5 w-5" />
               Explore Palintest
+            </Button>
+            <Button
+              size="lg"
+              onClick={() => {
+                trackEvent('hero_cta_clicked', { button: 'explore_services' });
+                scrollToSection("services");
+              }}
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-6"
+            >
+              Explore Our Services
             </Button>
           </div>
 
