@@ -1,4 +1,4 @@
--- Moris Enterprises Database Migrations
+-- Moris Entreprises Database Migrations
 -- Database: excelmed_morismarketing
 -- Created for API and Admin Dashboard
 

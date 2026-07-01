@@ -6,7 +6,7 @@ const NotFound = () => {
   const location = useLocation();
 
   usePageMeta({
-    title: "Page Not Found | 404 Error - Moris Enterprises",
+    title: "Page Not Found | 404 Error - Moris Entreprises",
     description: "The page you are looking for could not be found. Return to our homepage to explore laboratory chemicals, medical equipment, and biotechnology solutions.",
     keywords: "404, page not found, error page",
     type: "website",

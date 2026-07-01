@@ -44,7 +44,7 @@ const ProductDetail = () => {
     image: product.image,
     brand: {
       "@type": "Brand",
-      name: "Moris Enterprises",
+      name: "Moris Entreprises",
     },
     category: product.category,
     offers: {

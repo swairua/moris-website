@@ -29,7 +29,7 @@ export const Partners = () => {
         {
           "@type": "ListItem",
           position: 1,
-          name: "Moris Enterprises",
+          name: "Moris Entreprises",
           item: "https://morisentreprises.com",
         },
         {
@@ -44,7 +44,7 @@ export const Partners = () => {
     const partnersOrgSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Moris Enterprises",
+      name: "Moris Entreprises",
       url: "https://morisentreprises.com",
       description: "Premier supplier of laboratory chemicals, equipment, and diagnostic instruments in Kenya. Official Palintest distributor.",
       partners: partners.map((partner) => ({

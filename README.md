@@ -1,10 +1,10 @@
-# Moris Enterprises Website
+# Moris Entreprises Website
 
 Laboratory chemicals, medical equipment, biotechnology, and diagnostic tools supplier in Kenya.
 
 ## Project Overview
 
-This is the official website for Moris Enterprises, a leading supplier of laboratory and medical equipment in Kenya. The website showcases our products, services, and enables customers to request quotations.
+This is the official website for Moris Entreprises, a leading supplier of laboratory and medical equipment in Kenya. The website showcases our products, services, and enables customers to request quotations.
 
 ## Technologies Used
 
@@ -121,8 +121,8 @@ npm run lint
 
 **Email**: [Your Email]
 **Phone**: +254-733-137-332
-**Website**: https://morisenterprises.com
+**Website**: https://morisentreprises.com
 
 ## License
 
-All rights reserved © Moris Enterprises 2010-2024
+All rights reserved © Moris Entreprises 2010-2024

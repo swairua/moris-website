@@ -1,6 +1,6 @@
 <?php
 /**
- * Moris Enterprises Marketing Automation API
+ * Moris Entreprises Marketing Automation API
  * Main router for all API endpoints
  */
 

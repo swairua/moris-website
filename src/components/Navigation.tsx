@@ -79,7 +79,7 @@ export const Navigation = () => {
           >
             <OptimizedImage
               src={logo}
-              alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
+              alt="Moris Entreprises - Laboratory Chemicals & Medical Equipment Supplier"
               className="h-16 w-16 object-contain"
               priority
               width={64}
@@ -90,7 +90,7 @@ export const Navigation = () => {
                 Moris
               </span>
               <span className="text-lg font-display font-bold text-primary leading-tight">
-                Enterprises
+                Entreprises
               </span>
             </div>
           </button>
@@ -231,7 +231,7 @@ export const Navigation = () => {
                 <div className="flex items-center gap-2">
                   <img
                     src={logo}
-                    alt="Moris Enterprises"
+                    alt="Moris Entreprises"
                     className="h-10 w-10 object-contain"
                     width={40}
                     height={40}

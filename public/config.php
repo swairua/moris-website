@@ -1,6 +1,6 @@
 <?php
 /**
- * Moris Enterprises API Configuration
+ * Moris Entreprises API Configuration
  */
 
 // Load environment variables from .env file if it exists

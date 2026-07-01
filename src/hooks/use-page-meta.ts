@@ -235,7 +235,7 @@ export const usePageMeta = ({
             description: service.description,
             provider: {
               "@type": "Organization",
-              name: "Moris Enterprises",
+              name: "Moris Entreprises",
               url: "https://morisentreprises.com",
             },
             ...(service.areaServed && {

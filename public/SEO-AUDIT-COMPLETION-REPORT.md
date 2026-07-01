@@ -1,6 +1,6 @@
 # SEO Audit & Palintest Elevation - Completion Report
 
-**Project**: Moris Enterprises Website
+**Project**: Moris Entreprises Website
 **Date Completed**: 2024
 **Version**: 1.0
 
@@ -485,4 +485,4 @@ The website is now well-optimized for search engines with Palintest positioned a
 
 **Report Generated**: 2024
 **Next Review**: 3-6 months post-implementation
-**Contact**: Moris Enterprises SEO Team
+**Contact**: Moris Entreprises SEO Team

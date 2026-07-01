@@ -65,7 +65,7 @@ const automobileProducts = [
 const routesToPrerender = [
   {
     path: "/",
-    title: "Moris Enterprises | Laboratory Chemicals & Medical Equipment Supplier in Kenya",
+    title: "Moris Entreprises | Laboratory Chemicals & Medical Equipment Supplier in Kenya",
     description:
       "Leading supplier of laboratory chemicals, medical instruments, biotechnology equipment, and diagnostic tools in Kenya. Quality products since 2010. Free quotation via WhatsApp.",
     keywords:
@@ -82,7 +82,7 @@ const routesToPrerender = [
   },
   {
     path: "/gallery",
-    title: "Gallery | Moris Enterprises",
+    title: "Gallery | Moris Entreprises",
     description:
       "View our laboratory and facilities at Moris Enterprises. Professional equipment setup and quality standards.",
     keywords: "laboratory gallery, equipment showcase, facility tour",

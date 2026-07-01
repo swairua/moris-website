@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moris-enterprises-v1';
+const CACHE_NAME = 'moris-entreprises-v1';
 const urlsToCache = [
   '/',
   '/index.html',

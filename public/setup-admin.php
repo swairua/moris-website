@@ -1,7 +1,7 @@
 <?php
 /**
  * Admin Setup Script
- * Initialize admin username and password for Moris Enterprises
+ * Initialize admin username and password for Moris Entreprises
  * 
  * Usage (Command Line):
  * php public/setup-admin.php
@@ -41,7 +41,7 @@ function prompt($question) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moris Enterprises - Admin Setup</title>
+    <title>Moris Entreprises - Admin Setup</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -125,7 +125,7 @@ function prompt($question) {
 </head>
 <body>
     <div class="container">
-        <h1>⚙️ Moris Enterprises Admin Setup</h1>
+        <h1>⚙️ Moris Entreprises Admin Setup</h1>
         
         <?php
         // Handle form submission
@@ -236,7 +236,7 @@ function prompt($question) {
 // Handle CLI mode
 if ($is_cli) {
     echo "\n╔════════════════════════════════════════════════════════╗\n";
-    echo "║  Moris Enterprises - Admin Setup Script               ║\n";
+    echo "║  Moris Entreprises - Admin Setup Script               ║\n";
     echo "╚════════════════════════════════════════════════════════╝\n";
 
     try {

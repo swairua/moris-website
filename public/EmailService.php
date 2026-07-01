@@ -126,7 +126,7 @@ class EmailService {
      */
     public function getTemplate($template_name) {
         $templates = [
-            'welcome' => 'Welcome to Moris Enterprises! We are excited to help you.',
+            'welcome' => 'Welcome to Moris Entreprises! We are excited to help you.',
             'follow_up' => 'Following up on your inquiry about our products and services.',
             'special_offer' => 'Special offer just for you! Check out our latest products.'
         ];

@@ -1,4 +1,4 @@
--- Moris Enterprises Marketing Automation Database Schema
+-- Moris Entreprises Marketing Automation Database Schema
 -- Run this migration with: mysql -u user -p database < 001_initial_schema.sql
 
 -- Create users table (admin users)

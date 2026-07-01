@@ -34,12 +34,12 @@ export const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <OptimizedImage
                 src={logo}
-                alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
+                alt="Moris Entreprises - Laboratory Chemicals & Medical Equipment Supplier"
                 className="h-16 w-16"
                 width={64}
                 height={64}
               />
-              <span className="text-2xl font-display font-bold">Moris Enterprises</span>
+              <span className="text-2xl font-display font-bold">Moris Entreprises</span>
             </div>
             <p className="text-background/80 leading-relaxed">
               Leading supplier of laboratory chemicals, medical instruments, and biotechnology equipment since 2010.
@@ -133,7 +133,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <div className="text-background/80 text-sm">
-                  <p>info@morisenterprises.com</p>
+                  <p>info@morisentreprises.com</p>
                 </div>
               </li>
             </ul>
@@ -143,7 +143,7 @@ export const Footer = () => {
         <div className="border-t border-background/20 pt-8">
           <div className="flex justify-between items-center">
             <p className="text-center flex-1 text-background/60">
-              © {new Date().getFullYear()} Moris One Enterprises. All rights reserved.
+              © {new Date().getFullYear()} Moris One Entreprises. All rights reserved.
             </p>
             <a
               href="/admin/login"

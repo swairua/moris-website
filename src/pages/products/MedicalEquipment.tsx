@@ -172,7 +172,7 @@ const products = [
 
 const MedicalEquipment = () => {
   usePageMeta({
-    title: "Medical Equipment | Laboratory Instruments | Moris Enterprises Kenya",
+    title: "Medical Equipment | Laboratory Instruments | Moris Entreprises Kenya",
     description: "Discover premium medical equipment and laboratory instruments including hematology analyzers, nucleic acid extractors, and microwave digestion systems.",
     keywords: "medical equipment, laboratory instruments, hematology analyzer, diagnostic equipment, Kenya",
     type: "article",
@@ -201,7 +201,7 @@ const MedicalEquipment = () => {
               <div className="relative w-full h-48 overflow-hidden bg-muted">
                 <OptimizedImage
                   src={product.image}
-                  alt={`${product.name} - Medical equipment from Moris Enterprises Kenya`}
+                  alt={`${product.name} - Medical equipment from Moris Entreprises Kenya`}
                   width={800}
                   height={600}
                   className="w-full h-full object-cover"

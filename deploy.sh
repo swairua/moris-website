@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# Moris Enterprises - Automated Deployment Script
+# Moris Entreprises - Automated Deployment Script
 # 
 # Usage:
 #   bash deploy.sh production
@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 ENVIRONMENT=${1:-development}
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║  Moris Enterprises - Deployment Script                ║${NC}"
+echo -e "${BLUE}║  Moris Entreprises - Deployment Script                ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -141,7 +141,7 @@ TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 cat > DEPLOYMENT_REPORT.txt << EOF
 ╔════════════════════════════════════════════════════════╗
-║  Moris Enterprises - Deployment Report                ║
+║  Moris Entreprises - Deployment Report                ║
 ╚════════════════════════════════════════════════════════╝
 
 Generated: $TIMESTAMP
@@ -204,7 +204,7 @@ echo ""
 if [ "$ENVIRONMENT" != "development" ]; then
     echo -e "${BLUE}📦 Step 7: Creating deployment archive...${NC}"
     
-    ARCHIVE_NAME="moris-enterprises-${ENVIRONMENT}-$(date +%Y%m%d-%H%M%S).tar.gz"
+    ARCHIVE_NAME="moris-entreprises-${ENVIRONMENT}-$(date +%Y%m%d-%H%M%S).tar.gz"
     tar -czf "$ARCHIVE_NAME" dist/
     ARCHIVE_SIZE=$(du -h "$ARCHIVE_NAME" | awk '{print $1}')
     

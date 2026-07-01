@@ -81,8 +81,8 @@ const PalintestKits = () => {
     ],
     faqs: [
       {
-        question: "Is Moris Enterprises an authorized Palintest distributor?",
-        answer: "Yes, Moris Enterprises is an official authorized distributor of Palintest products in Kenya. We guarantee authentic products with full manufacturer support and warranty."
+        question: "Is Moris Entreprises an authorized Palintest distributor?",
+        answer: "Yes, Moris Entreprises is an official authorized distributor of Palintest products in Kenya. We guarantee authentic products with full manufacturer support and warranty."
       },
       {
         question: "What Palintest products are available?",

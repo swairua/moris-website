@@ -354,7 +354,7 @@ export const injectServiceSchema = (
   name: string,
   description: string,
   url: string,
-  provider: string = "Moris Enterprises",
+  provider: string = "Moris Entreprises",
   areaServed?: string[]
 ): void => {
   const schema = {

@@ -78,7 +78,7 @@ const Glassware = () => {
             <div className="relative w-full h-48 overflow-hidden bg-muted">
               <OptimizedImage
                 src={product.image}
-                alt={`${product.name} - Laboratory glassware from Moris Enterprises`}
+                alt={`${product.name} - Laboratory glassware from Moris Entreprises`}
                 className="w-full h-full object-cover"
                 width={800}
                 height={600}

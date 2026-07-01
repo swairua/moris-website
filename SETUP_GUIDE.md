@@ -1,7 +1,7 @@
-# Moris Enterprises - Marketing Automation Setup Guide
+# Moris Entreprises - Marketing Automation Setup Guide
 
 ## Overview
-This guide covers the setup, configuration, and testing of the complete marketing automation system for Moris Enterprises.
+This guide covers the setup, configuration, and testing of the complete marketing automation system for Moris Entreprises.
 
 ## Backend Setup (PHP API)
 
@@ -163,7 +163,7 @@ curl -X POST http://localhost:5173/api/campaigns \
   -H "Authorization: Bearer TOKEN" \
   -d '{
     "name": "Welcome Campaign",
-    "subject": "Welcome to Moris Enterprises!",
+    "subject": "Welcome to Moris Entreprises!",
     "template": "Thank you for your inquiry. We look forward to serving you."
   }'
 ```

@@ -35,7 +35,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   usePageMeta({
-    title: "Laboratory Gallery | Moris Enterprises Kenya",
+    title: "Laboratory Gallery | Moris Entreprises Kenya",
     description: "Explore our comprehensive gallery showcasing premium laboratory chemicals, equipment, and solutions. View high-quality images of our products and facilities.",
     keywords: "laboratory gallery, chemical products, laboratory equipment, laboratory images, laboratory solutions, Kenya",
     type: "website",
@@ -120,7 +120,7 @@ const Gallery = () => {
           >
             <OptimizedImage
               src={galleryImages.find((img) => img.id === selectedImage)?.url || ""}
-              alt={`${galleryImages.find((img) => img.id === selectedImage)?.title} - Moris Enterprises laboratory gallery`}
+              alt={`${galleryImages.find((img) => img.id === selectedImage)?.title} - Moris Entreprises laboratory gallery`}
               className="w-full h-full object-contain"
               width={1200}
               height={800}

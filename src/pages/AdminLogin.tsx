@@ -34,7 +34,7 @@ export default function AdminLogin() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Admin Login</CardTitle>
           <CardDescription>
-            Sign in to access the Moris Enterprises admin dashboard
+            Sign in to access the Moris Entreprises admin dashboard
           </CardDescription>
         </CardHeader>
         <CardContent>

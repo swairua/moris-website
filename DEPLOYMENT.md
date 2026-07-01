@@ -1,4 +1,4 @@
-# Moris Enterprises - Deployment Guide
+# Moris Entreprises - Deployment Guide
 
 ## Overview
 This application uses Vite for React frontend and PHP for the backend API. The build outputs everything to the `dist/` folder which is ready to deploy.
