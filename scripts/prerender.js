@@ -117,6 +117,19 @@ const categoryRouteMap = {
   },
 };
 
+function loadPagesRegistry() {
+  const registryPath = path.join(__dirname, "../src/data/pages-registry.json");
+  try {
+    if (fs.existsSync(registryPath)) {
+      const registryData = fs.readFileSync(registryPath, "utf-8");
+      return JSON.parse(registryData);
+    }
+  } catch (err) {
+    console.warn(`[registry] Could not load pages-registry.json: ${err.message}`);
+  }
+  return null;
+}
+
 const staticRoutes = [
   {
     path: "/",
@@ -152,12 +165,29 @@ async function fetchProductsFromAPI() {
 function buildRoutes(apiProducts) {
   const routes = [...staticRoutes];
 
-  // Add category routes
-  for (const key of Object.keys(categoryRouteMap)) {
-    routes.push(categoryRouteMap[key]);
+  // Load and add registry pages (Wave 1, 2, 3)
+  const registryPages = loadPagesRegistry();
+  if (registryPages && registryPages.length > 0) {
+    console.log(`[registry] Registering ${registryPages.length} pages from pages-registry.json`);
+    for (const page of registryPages) {
+      if (page.status !== "deleted") {
+        routes.push({
+          path: page.route,
+          title: page.title,
+          description: page.metaDescription,
+          keywords: page.keywords.join(", "),
+        });
+      }
+    }
+  } else {
+    console.log("[registry] No pages-registry.json found. Using legacy category routes.");
+    // Fallback: Add legacy category routes
+    for (const key of Object.keys(categoryRouteMap)) {
+      routes.push(categoryRouteMap[key]);
+    }
   }
 
-  // Add product detail routes
+  // Add product detail routes from API
   if (apiProducts && apiProducts.length > 0) {
     console.log(`[api] Generating prerender routes for ${apiProducts.length} API products`);
     for (const product of apiProducts) {
@@ -173,10 +203,8 @@ function buildRoutes(apiProducts) {
         keywords: `${product.name}, ${product.category || "laboratory supplies"}, Moris Enterprises, Kenya supplier`,
       });
     }
-  }
-
-  // Fallback: hardcoded automobile products
-  if (!apiProducts) {
+  } else if (!registryPages) {
+    // Fallback: hardcoded automobile products (only if no registry)
     const fallbackProducts = [
       { id: "komu-coils-blue", name: "KOMU Coils Springs - Blue", title: "KOMU Blue Suspension Coil Springs | Premium Auto Parts Kenya", description: "KOMU Blue suspension coil springs - premium-grade automotive suspension components. High tensile strength, corrosion-resistant finish.", keywords: "KOMU blue coils, KOMU blue springs, suspension coils, coil springs Kenya" },
       { id: "komu-coils-yellow", name: "KOMU Coils Springs - Yellow", title: "KOMU Yellow Heavy-Duty Suspension Springs | Commercial Vehicle Parts", description: "KOMU Yellow suspension springs - premium coil springs for enhanced vehicle suspension. Superior load-bearing capacity for commercial vehicles.", keywords: "KOMU yellow coils, KOMU yellow springs, heavy-duty suspension, KOMU automotive" },
