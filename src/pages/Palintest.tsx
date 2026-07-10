@@ -211,8 +211,8 @@ const faqs = [
 
 const Palintest = () => {
   usePageMeta({
-    title: "Palintest Water Testing Equipment & Photometers | Official Distributor Kenya",
-    description: "Official distributor of Palintest water testing equipment in Kenya. 300+ SKUs including Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD tube tests, Wagtech microbiological kits, Delagua kits & more. Authorized Palintest UK partner with full technical support.",
+    title: "Palintest Water Testing Equipment Kenya — Official Distributor | Lumiso, Kemio",
+    description: "Official Palintest distributor in Kenya. 300+ products: Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD kits, Wagtech microbiological. Authorized & guaranteed genuine. Fast delivery. WhatsApp quotations.",
     keywords: "Palintest, Palintest Kenya, Palintest distributor, Palintest water testing, Palintest photometer, buy Palintest Kenya, Palintest price Kenya, Palintest distributor Nairobi, Lumiso, Kemio, Wagtech, Palintest tablet tests, Palintest tube tests, COD testing, Delagua, water testing equipment, water quality analysis, official Palintest distributor, Nairobi, Palintest reagents, DPD tablets, water analysis Kenya",
     type: "article",
     canonical: "https://morisentreprises.com/palintest",
@@ -221,7 +221,7 @@ const Palintest = () => {
       { name: "Palintest", url: "/palintest" },
     ],
     faqs: faqs,
-    author: "Moris Entreprises",
+    author: "Moris Entreprises Laboratory Equipment Team",
     publishedDate: "2024-01-15",
     modifiedDate: new Date().toISOString().split("T")[0],
   });
@@ -277,10 +277,11 @@ const Palintest = () => {
       title="Palintest Water Testing Equipment &amp; Photometers — Official Distributor Kenya"
       description="Official distributor of Palintest UK in Kenya — supplying 300+ SKUs including Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD tube tests, Wagtech microbiological kits, Delagua bacteriological kits, filtration, and sterilization equipment for professional water quality analysis."
     >
-      <div className="space-y-12">
+      <section className="space-y-12" data-distributor-status="official-authorized">
+        <h1 className="sr-only">Palintest Water Testing Equipment — Official Kenya Distributor</h1>
         {Object.entries(productCategories).map(([category, items]) => (
-          <div key={category}>
-            <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+          <section key={category} itemScope itemType="https://schema.org/CollectionPage">
+            <h2 className="text-3xl font-display font-bold text-foreground mb-6" itemProp="name">
               {category}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -288,11 +289,13 @@ const Palintest = () => {
                 <Card
                   key={index}
                   className="p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  itemScope
+                  itemType="https://schema.org/Product"
                 >
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2" itemProp="name">
                     {product.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground flex-1">
+                  <p className="text-sm text-muted-foreground flex-1" itemProp="description">
                     {product.description}
                   </p>
                   <Button
@@ -305,9 +308,9 @@ const Palintest = () => {
                 </Card>
               ))}
             </div>
-          </div>
+          </section>
         ))}
-      </div>
+      </section>
 
       <div className="mt-16 prose prose-lg max-w-none">
         <h2 className="text-3xl font-display font-bold text-foreground mb-4">
