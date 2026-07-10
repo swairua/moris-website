@@ -148,7 +148,7 @@ export const setRobotDirectives = (
   const directives = [
     index ? "index" : "noindex",
     follow ? "follow" : "nofollow",
-    imageIndex ? "imagindexable" : "noimageindex",
+    imageIndex ? "imageindex" : "noimageindex",
     snippet ? "max-snippet:-1" : "max-snippet:0",
     videoPreview ? "max-video-preview:-1" : "max-video-preview:0",
   ];

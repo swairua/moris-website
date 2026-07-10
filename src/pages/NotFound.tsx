@@ -10,7 +10,8 @@ const NotFound = () => {
     description: "The page you are looking for could not be found. Return to our homepage to explore laboratory chemicals, medical equipment, and biotechnology solutions.",
     keywords: "404, page not found, error page",
     type: "website",
-    canonical: "https://morisentreprises.com/404",
+    canonical: location.pathname === "/" ? "https://morisentreprises.com/" : `https://morisentreprises.com${location.pathname}`,
+    robots: "noindex, nofollow",
   });
 
   useEffect(() => {
