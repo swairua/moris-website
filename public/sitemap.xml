@@ -3,19 +3,19 @@
   <!-- Main Pages -->
   <url>
     <loc>https://morisentreprises.com/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/gallery</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/palintest</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -23,91 +23,151 @@
   <!-- Product Categories (Top-Level URLs) -->
   <url>
     <loc>https://morisentreprises.com/medical</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/microbiology</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/glassware</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/chemicals</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/water</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/testing</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/safety</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/wastewater</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/labequipment</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://morisentreprises.com/automobile</loc>
-    <lastmod>2024-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/chromatography</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/qualitycontrol</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://morisentreprises.com/hach</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://morisentreprises.com/water</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/testing</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/safety</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/wastewater</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/labequipment</loc>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/filtration</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/materialtesting</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/automobile</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/hach</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/spectrophotometers</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/pcr-machines</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/microscopes</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/centrifuges</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/autoclaves</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/incubators</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/analytical-balances</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/ph-meters</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/conductivity-meters</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://morisentreprises.com/colorimeters</loc>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -115,43 +175,43 @@
   <!-- Automobile Product Detail Pages (Top-Level) -->
   <url>
     <loc>https://morisentreprises.com/komu-coils-blue</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/komu-coils-yellow</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/komu-coils-dark-blue</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/komu-coils-orange-red</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/komu-coils-standard</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/komu-coils-premium</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://morisentreprises.com/automotive-shock-absorbers</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

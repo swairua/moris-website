@@ -34,6 +34,8 @@
   RewriteRule ^api\.php$ - [L]
 
   # Route all other requests to index.html (SPA)
+  # Note: 404 pages are marked with noindex meta tag in React component
+  # to prevent indexing of non-existent content as valid pages
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
 
