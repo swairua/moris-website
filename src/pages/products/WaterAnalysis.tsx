@@ -132,21 +132,29 @@ const WaterAnalysis = () => {
 
         {/* Palintest Promo Banner */}
         <div className="mt-8 mb-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-            <div className="flex-1">
+          <div className="flex flex-col gap-4">
+            <div>
               <h3 className="text-2xl font-display font-bold text-foreground mb-2">
                 🏆 Official Palintest Distributor
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 We are the official authorized distributor of Palintest UK in Kenya. Browse our complete range of Palintest photometers, test tablets, tube tests, and microbiological kits on the dedicated Palintest page.
               </p>
             </div>
-            <Button
-              onClick={() => window.location.href = "/palintest"}
-              className="bg-primary hover:bg-primary-dark text-primary-foreground whitespace-nowrap"
-            >
-              View Palintest Products →
-            </Button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <Button
+                onClick={() => window.location.href = "/palintest"}
+                className="bg-primary hover:bg-primary-dark text-primary-foreground whitespace-nowrap"
+              >
+                View All Palintest Products →
+              </Button>
+              <Button
+                onClick={() => window.location.href = "/palintest/tablet-tests"}
+                className="bg-primary/90 hover:bg-primary text-primary-foreground whitespace-nowrap"
+              >
+                Palintest Tablet Tests (40+ Parameters) →
+              </Button>
+            </div>
           </div>
         </div>
         
