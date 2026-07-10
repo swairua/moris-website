@@ -14,6 +14,9 @@ import Glassware from "./pages/products/Glassware";
 import LaboratoryChemicals from "./pages/products/LaboratoryChemicals";
 import WaterAnalysis from "./pages/products/WaterAnalysis";
 import Palintest from "./pages/Palintest";
+import LumisoCatalog from "./pages/Palintest/LumisoCatalog";
+import TabletTests from "./pages/Palintest/TabletTests";
+import KemioAnalyzers from "./pages/Palintest/KemioAnalyzers";
 import LaboratoryTesting from "./pages/products/LaboratoryTesting";
 import SafetyProducts from "./pages/products/SafetyProducts";
 import WasteWaterFiltration from "./pages/products/WasteWaterFiltration";
@@ -69,6 +72,9 @@ const AppRoutes = () => {
         <Route path="/qualitycontrol" element={<EquipmentQualityControl />} />
         <Route path="/water" element={<WaterAnalysis />} />
         <Route path="/palintest" element={<Palintest />} />
+        <Route path="/palintest/lumiso-photometers" element={<LumisoCatalog />} />
+        <Route path="/palintest/tablet-tests" element={<TabletTests />} />
+        <Route path="/palintest/kemio-analyzers" element={<KemioAnalyzers />} />
         <Route path="/testing" element={<LaboratoryTesting />} />
         <Route path="/safety" element={<SafetyProducts />} />
         <Route path="/wastewater" element={<WasteWaterFiltration />} />

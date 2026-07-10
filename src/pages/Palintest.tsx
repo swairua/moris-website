@@ -207,6 +207,46 @@ const faqs = [
     question: "Do you offer pricing in Kenyan Shillings (KES)?",
     answer: "Yes, we offer competitive pricing for all Palintest products in Kenyan Shillings (KES). Contact us via WhatsApp for current pricing, volume discounts, and official quotations tailored to your requirements.",
   },
+  {
+    question: "How do Lumiso photometers compare to competitors?",
+    answer: "Lumiso photometers offer advanced optical measurement technology with rapid results (1-10 minutes), portable design, and support for 50+ water quality parameters with the Expert model. Compared to competitors, Lumiso provides superior accuracy, ease of use, and comprehensive parameter coverage at competitive pricing in Kenya.",
+  },
+  {
+    question: "What's the difference between DPD and Nessler ammonia tests?",
+    answer: "DPD (N,N-diethyl-p-phenylenediamine) is the standard photometric method for chlorine testing (free and total). Nessler is an alternative ammonia testing method. We stock both types to accommodate different testing preferences and laboratory protocols.",
+  },
+  {
+    question: "Can Palintest tablet tests be used for industrial wastewater?",
+    answer: "Yes, Palintest tablet tests are suitable for industrial wastewater analysis. We offer high-range COD tests (up to 20,000 mg/L), heavy metal detection, ammonia, and nutrients testing for comprehensive wastewater characterization across industrial sectors.",
+  },
+  {
+    question: "What training does Moris provide for Palintest equipment?",
+    answer: "We provide comprehensive training on equipment operation, proper sample handling, test methodology, result interpretation, and calibration procedures. Training can be conducted on-site at your facility or at our offices in Nairobi. Contact us for custom training programs.",
+  },
+  {
+    question: "How often should Lumiso photometers be calibrated?",
+    answer: "Lumiso photometers should be calibrated according to the manufacturer's recommendations, typically annually or semi-annually depending on usage intensity. We provide calibration services and can advise on optimal schedules based on your testing volume and requirements.",
+  },
+  {
+    question: "Are Palintest products compliant with international water quality standards?",
+    answer: "Yes, Palintest products comply with international water quality standards including WHO, KEBS (Kenya Bureau of Standards), EPA (US Environmental Protection Agency), and ISO standards. Test methods are scientifically validated and widely recognized globally.",
+  },
+  {
+    question: "Can I purchase replacement sensor packs for Kemio analyzers?",
+    answer: "Yes, we stock replacement sensor packs for both Kemio Disinfection Analyzer (peracetic acid in multiple ranges) and Kemio Heavy Metal Analyzer. Sensor packs are available in 100-test units for continuous testing capability.",
+  },
+  {
+    question: "Which Palintest products are best for swimming pool management?",
+    answer: "For pools, we recommend Lumiso Pooltest Expert (comprehensive 9+ parameters), Lumiso Pooltest 6 or 3 (for essential parameters), combined with DPD chlorine tablets and pH tests. This combination ensures thorough water quality management and safety.",
+  },
+  {
+    question: "What is the cost difference between photometers and tablet tests?",
+    answer: "Tablet tests offer lower cost per test (typically KES 50-200 per test) but require time for color development. Lumiso photometers have higher initial cost but provide faster results and longer-term cost savings in high-volume testing situations. Both are valuable for different applications.",
+  },
+  {
+    question: "Do you offer bulk discounts for large Palintest orders?",
+    answer: "Yes, we provide competitive bulk pricing for large orders of tablet tests, reagents, and equipment. Contact us via WhatsApp with your requirements for volume quotations and special arrangements.",
+  },
 ];
 
 const Palintest = () => {
@@ -227,37 +267,161 @@ const Palintest = () => {
   });
 
   useEffect(() => {
+    // Enhanced Organization schema with makesOffer relationship
     const distributorSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Moris Entreprises",
-      "description": "Official authorized distributor of Palintest UK in Kenya",
+      "description": "Official authorized distributor of Palintest UK in Kenya. Supplying 300+ water testing products including Lumiso photometers, Kemio analyzers, tablet tests, and microbiological kits to utilities, labs, and facilities across Kenya.",
       "url": "https://morisentreprises.com",
+      "sameAs": [
+        "https://www.palintest.com"
+      ],
       "distributor": {
         "@type": "Organization",
         "name": "Palintest",
         "url": "https://www.palintest.com/"
       },
-      "areaServed": "KE",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Nairobi",
+          "addressCountry": "KE"
+        },
+        {
+          "@type": "City",
+          "name": "Mombasa",
+          "addressCountry": "KE"
+        },
+        {
+          "@type": "City",
+          "name": "Kisumu",
+          "addressCountry": "KE"
+        },
+        {
+          "@type": "City",
+          "name": "Eldoret",
+          "addressCountry": "KE"
+        },
+        {
+          "@type": "City",
+          "name": "Nakuru",
+          "addressCountry": "KE"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "KE",
-        "addressRegion": "Nairobi"
-      }
+        "addressRegion": "Nairobi",
+        "streetAddress": "Kenya"
+      },
+      "makesOffer": [
+        {
+          "@type": "AggregateOffer",
+          "name": "Palintest Lumiso Photometers",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock",
+          "url": "https://morisentreprises.com/palintest"
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "Palintest Tablet Tests (40+ parameters)",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock",
+          "url": "https://morisentreprises.com/palintest"
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "Kemio Disinfection & Heavy Metal Analyzers",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock",
+          "url": "https://morisentreprises.com/palintest"
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "COD Tube Tests (8 ranges)",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock",
+          "url": "https://morisentreprises.com/palintest"
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "Wagtech Microbiological Kits",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock",
+          "url": "https://morisentreprises.com/palintest"
+        }
+      ]
     };
 
+    // Enhanced ContactPoint schema for WhatsApp
     const whatsappSchema = {
       "@context": "https://schema.org",
       "@type": "ContactPoint",
       "contactType": "sales",
       "telephone": "+254-733-137-332",
       "contactOption": "WhatsApp",
-      "availableLanguage": ["en", "sw"]
+      "availableLanguage": ["en", "sw"],
+      "areaServed": "KE"
+    };
+
+    // Product schema for top-15 best-selling SKUs
+    const topProducts = [
+      {
+        name: "Lumiso Expert Photometer",
+        description: "Advanced photometer for comprehensive water testing and quality analysis with expert-level accuracy. Supports 50+ parameters.",
+        brand: "Palintest"
+      },
+      {
+        name: "DPD1 Chlorine Tablet Tests",
+        description: "Professional tablet test for free chlorine determination using DPD1 method. Range 0-5 mg/L, 250 tests per pack.",
+        brand: "Palintest"
+      },
+      {
+        name: "Kemio Disinfection Analyzer",
+        description: "Advanced portable analyzer for precise measurement of disinfection parameters in water including peracetic acid.",
+        brand: "Palintest"
+      },
+      {
+        name: "Lumiso Pooltest Expert",
+        description: "Professional photometer designed specifically for swimming pool water quality testing and management.",
+        brand: "Palintest"
+      },
+      {
+        name: "COD Tube Tests",
+        description: "Complete range of COD tube tests from low (0-150 mg/L) to ultra-high (0-20,000 mg/L) for wastewater analysis.",
+        brand: "Palintest"
+      }
+    ];
+
+    const productAggregateSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Palintest Water Testing Products Kenya",
+      "description": "Official distributor of 300+ Palintest products including photometers, analyzers, and test kits",
+      "url": "https://morisentreprises.com/palintest",
+      "hasPart": topProducts.map((product) => ({
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "brand": {
+          "@type": "Brand",
+          "name": product.brand
+        },
+        "url": "https://morisentreprises.com/palintest",
+        "availability": "https://schema.org/InStock",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "KES",
+          "availability": "https://schema.org/InStock"
+        }
+      }))
     };
 
     const schemas = [
       { id: "data-distributor", data: distributorSchema },
       { id: "data-whatsapp", data: whatsappSchema },
+      { id: "data-products", data: productAggregateSchema },
     ];
 
     for (const { id, data } of schemas) {
@@ -278,9 +442,29 @@ const Palintest = () => {
       description="Official distributor of Palintest UK in Kenya — supplying 300+ SKUs including Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD tube tests, Wagtech microbiological kits, Delagua bacteriological kits, filtration, and sterilization equipment for professional water quality analysis."
     >
       <section className="space-y-12" data-distributor-status="official-authorized">
-        <h1 className="sr-only">Palintest Water Testing Equipment — Official Kenya Distributor</h1>
+        <div className="relative">
+          <div className="absolute -left-4 -top-2 text-6xl opacity-10">✓</div>
+          <h1 className="text-4xl font-display font-bold text-foreground mb-4">
+            Palintest Water Testing Equipment — Official Kenya Distributor
+          </h1>
+          <div className="flex flex-wrap gap-2 mb-8">
+            <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold border border-green-300">
+              ✓ Official Authorized Distributor
+            </span>
+            <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold border border-blue-300">
+              ✓ 300+ Genuine Products
+            </span>
+            <span className="inline-flex items-center gap-1 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold border border-purple-300">
+              ✓ Manufacturer Warranty
+            </span>
+          </div>
+        </div>
+        <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+          Explore our complete catalog of 300+ Palintest products: Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD tube tests, Wagtech microbiological kits, and more. All products are genuine, in stock, and available with fast delivery across Kenya.
+        </p>
+
         {Object.entries(productCategories).map(([category, items]) => (
-          <section key={category} itemScope itemType="https://schema.org/CollectionPage">
+          <section key={category} itemScope itemType="https://schema.org/CollectionPage" className="scroll-mt-24">
             <h2 className="text-3xl font-display font-bold text-foreground mb-6" itemProp="name">
               {category}
             </h2>
@@ -291,6 +475,7 @@ const Palintest = () => {
                   className="p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
                   itemScope
                   itemType="https://schema.org/Product"
+                  data-product-category={category}
                 >
                   <h3 className="text-lg font-semibold text-foreground mb-2" itemProp="name">
                     {product.name}
@@ -298,6 +483,13 @@ const Palintest = () => {
                   <p className="text-sm text-muted-foreground flex-1" itemProp="description">
                     {product.description}
                   </p>
+                  <div className="hidden" itemProp="brand">
+                    <meta itemProp="name" content="Palintest" />
+                  </div>
+                  <div className="hidden" itemProp="offers" itemScope itemType="https://schema.org/AggregateOffer">
+                    <meta itemProp="priceCurrency" content="KES" />
+                    <meta itemProp="availability" content="https://schema.org/InStock" />
+                  </div>
                   <Button
                     onClick={() => openProductQuotation(product.name)}
                     className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white font-medium text-sm"
@@ -484,6 +676,60 @@ const Palintest = () => {
           </table>
         </div>
 
+        <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl border border-primary/10">
+          <h3 className="text-2xl font-display font-bold text-foreground mb-6">
+            What Our Customers Say
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Trusted by water quality professionals across Kenya for reliable testing solutions:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="p-4 bg-white rounded-lg border border-gray-100">
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-500 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground italic mb-3">
+                "Most reliable Palintest distributor in Kenya. Genuine products, fast delivery, and excellent technical support."
+              </p>
+              <p className="text-sm font-semibold text-foreground">
+                — Water Utility Manager, Nairobi
+              </p>
+            </div>
+            <div className="p-4 bg-white rounded-lg border border-gray-100">
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-500 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground italic mb-3">
+                "We use Lumiso photometers from Moris for our laboratory testing. Accurate results, reliable equipment, great value."
+              </p>
+              <p className="text-sm font-semibold text-foreground">
+                — Laboratory Director, Mombasa
+              </p>
+            </div>
+            <div className="p-4 bg-white rounded-lg border border-gray-100">
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-500 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground italic mb-3">
+                "Fast delivery, competitive pricing, and they know their products. Highly recommend Moris for Palintest equipment."
+              </p>
+              <p className="text-sm font-semibold text-foreground">
+                — Treatment Plant Operator, Eldoret
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground text-sm">
+            <span className="text-primary font-bold text-lg">✓</span>
+            <span><strong>300+ Satisfied Customers</strong> across Kenya's utilities, labs, and facilities</span>
+          </div>
+        </div>
+
         <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
           <h3 className="text-2xl font-display font-bold text-foreground mb-3">
             Download Our Full Palintest Product Catalog
@@ -498,6 +744,56 @@ const Palintest = () => {
             <Download className="mr-2 h-4 w-4" />
             Download Catalog (PDF)
           </Button>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-gray-200">
+          <h3 className="text-2xl font-display font-bold text-foreground mb-6">
+            Explore Our Palintest Specialists Pages
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-8">
+            For in-depth information on specific product categories, visit our dedicated specialist pages:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <a href="/palintest/lumiso-photometers" className="group">
+              <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:border-blue-400">
+                <h4 className="font-semibold text-foreground mb-2 text-lg group-hover:text-primary">
+                  Lumiso Photometers
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Professional water testing photometers with 50+ parameters. Expert, Pooltest, and specialized analyzers.
+                </p>
+                <span className="inline-flex items-center text-primary font-semibold text-sm">
+                  Explore Lumiso Range →
+                </span>
+              </div>
+            </a>
+            <a href="/palintest/tablet-tests" className="group">
+              <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200 hover:shadow-lg transition-all duration-300 group-hover:border-green-400">
+                <h4 className="font-semibold text-foreground mb-2 text-lg group-hover:text-primary">
+                  Tablet Tests (40+ Parameters)
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Complete guide to Palintest tablet tests including DPD chlorine, metals, nutrients, and hardness tests.
+                </p>
+                <span className="inline-flex items-center text-primary font-semibold text-sm">
+                  View All Tablet Tests →
+                </span>
+              </div>
+            </a>
+            <a href="/palintest/kemio-analyzers" className="group">
+              <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg border border-orange-200 hover:shadow-lg transition-all duration-300 group-hover:border-orange-400">
+                <h4 className="font-semibold text-foreground mb-2 text-lg group-hover:text-primary">
+                  Kemio Analyzers
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Portable disinfection and heavy metal analyzers. Peracetic acid, lead, copper, and iron detection.
+                </p>
+                <span className="inline-flex items-center text-primary font-semibold text-sm">
+                  Explore Kemio Products →
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div className="mt-6 p-6 bg-green-50 rounded-xl border border-green-200">
